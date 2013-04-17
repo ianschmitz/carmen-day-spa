@@ -22,6 +22,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Services Activity -->
+        <activity android:name="com.pixelcrunch.carmendayspa.ServicesActivity" >
+        </activity>
+
+        <!-- Products Activity -->
+        <activity android:name="com.pixelcrunch.carmendayspa.ProductsActivity" >
+        </activity>
+
+        <!-- Booking Activity -->
+        <activity android:name="com.pixelcrunch.carmendayspa.BookingActivity" >
+        </activity>
+
+        <!-- Directions Activity -->
+        <activity android:name="com.pixelcrunch.carmendayspa.DirectionsActivity" >
+        </activity>
+
+        <!-- Contact Activity -->
+        <activity android:name="com.pixelcrunch.carmendayspa.ContactActivity" >
+        </activity>
+
+        <!-- About Activity -->
+        <activity android:name="com.pixelcrunch.carmendayspa.AboutActivity" >
+        </activity>
     </application>
 
 </manifest>

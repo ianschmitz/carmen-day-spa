@@ -55,19 +55,25 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080007;
-        public static final int btn_events=0x7f080003;
-        public static final int btn_friends=0x7f080005;
-        public static final int btn_messages=0x7f080002;
-        public static final int btn_news_feed=0x7f080001;
-        public static final int btn_photos=0x7f080006;
-        public static final int btn_places=0x7f080004;
+        public static final int btn_about=0x7f080006;
+        public static final int btn_booking=0x7f080003;
+        public static final int btn_contact=0x7f080005;
+        public static final int btn_directions=0x7f080004;
+        public static final int btn_products=0x7f080002;
+        public static final int btn_services=0x7f080001;
         public static final int home_root=0x7f080000;
     }
     public static final class layout {
-        public static final int actionbar_layout=0x7f030000;
-        public static final int dashboard_layout=0x7f030001;
-        public static final int footer_layout=0x7f030002;
-        public static final int fragment_layout=0x7f030003;
+        public static final int about_layout=0x7f030000;
+        public static final int actionbar_layout=0x7f030001;
+        public static final int booking_layout=0x7f030002;
+        public static final int contact_layout=0x7f030003;
+        public static final int dashboard_layout=0x7f030004;
+        public static final int directions_layout=0x7f030005;
+        public static final int footer_layout=0x7f030006;
+        public static final int fragment_layout=0x7f030007;
+        public static final int products_layout=0x7f030008;
+        public static final int services_layout=0x7f030009;
     }
     public static final class menu {
         public static final int home=0x7f070000;

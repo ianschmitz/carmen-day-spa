@@ -7,7 +7,7 @@
     <!--   Services Button -->
 
     <Button
-        android:id="@+id/btn_news_feed"
+        android:id="@+id/btn_services"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_newsfeed"
         android:text="@string/services" />
@@ -15,7 +15,7 @@
     <!--   Products Button -->
 
     <Button
-        android:id="@+id/btn_messages"
+        android:id="@+id/btn_products"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_messages"
         android:text="@string/products" />
@@ -23,7 +23,7 @@
     <!--   Booking Button -->
 
     <Button
-        android:id="@+id/btn_events"
+        android:id="@+id/btn_booking"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_events"
         android:text="@string/booking" />
@@ -31,7 +31,7 @@
     <!--   Directions Button -->
 
     <Button
-        android:id="@+id/btn_places"
+        android:id="@+id/btn_directions"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_places"
         android:text="@string/directions" />
@@ -39,7 +39,7 @@
     <!--   Contact Button -->
 
     <Button
-        android:id="@+id/btn_friends"
+        android:id="@+id/btn_contact"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_friends"
         android:text="@string/contact" />
@@ -47,7 +47,7 @@
     <!--   About Us Button -->
 
     <Button
-        android:id="@+id/btn_photos"
+        android:id="@+id/btn_about"
         style="@style/DashboardButton"
         android:drawableTop="@drawable/btn_photos"
         android:text="@string/about" />
