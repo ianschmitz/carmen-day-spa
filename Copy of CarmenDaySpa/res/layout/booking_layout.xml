@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView01"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:scrollbars="vertical" >
+   android:id="@+id/ScrollView01"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:scrollbars="vertical">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:gravity="center">
 
+       <TextView
+           android:id="@+id/tvBookingTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/bookingTitle"
+           android:textSize="10pt"
+           android:gravity="center" >
+       </TextView>
 
-        <TextView
-            android:id="@+id/tvBookingTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bookingTitle"
-            android:textSize="10pt" >
-        </TextView>
+       <EditText
+           android:id="@+id/etBookingFirst"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/bookingFirstName"
+           android:inputType="textPersonName" >
+       </EditText>
 
-        <EditText
-            android:id="@+id/etBookingFirst"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/bookingFirstName"
-            android:inputType="textPersonName" >
-        </EditText>
+       <EditText
+           android:id="@+id/etBookingLast"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/bookingLastName"
+           android:inputType="textPersonName" >
+       </EditText>
 
-        <EditText
-            android:id="@+id/etBookingLast"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/bookingLastName"
-            android:inputType="textPersonName" >
-        </EditText>
+       <EditText
+           android:id="@+id/etService"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/requestedService"
+           android:inputType="text" >
+       </EditText>
 
-        <EditText
-            android:id="@+id/etService"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/requestedService"
-            android:inputType="text" >
-        </EditText>
+       <EditText
+           android:id="@+id/etEmailBooking"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/customerEmail"
+           android:inputType="textEmailAddress" >
+       </EditText>
 
-        <EditText
-            android:id="@+id/etEmailBooking"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/customerEmail"
-            android:inputType="textEmailAddress" >
-        </EditText>
+       <EditText
+           android:id="@+id/etPhoneBooking"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/customerPhone"
+           android:inputType="phone" >
+       </EditText>
 
-        <EditText
-            android:id="@+id/etPhoneBooking"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/customerPhone"
-            android:inputType="phone" >
-        </EditText>
+       <EditText
+           android:id="@+id/etAddCommentsBooking"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/additionalComments"
+           android:inputType="textMultiLine"
+           android:singleLine="true"
+           android:lines="5"
+           android:gravity="top" >
+       </EditText>
 
-        <EditText
-            android:id="@+id/etAddCommentsBooking"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/additionalComments"
-            android:inputType="textMultiLine" >
-        </EditText>
-
-        <Button
-            android:id="@+id/btnSendFeedback"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:onClick="sendFeedback"
-            android:text="@string/bookButton" >
-        </Button>
-    </LinearLayout>
+       <Button
+           android:id="@+id/btnSendFeedback"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:onClick="sendFeedback"
+           android:text="@string/bookButton" >
+       </Button>
+   </LinearLayout>
 
 </ScrollView>

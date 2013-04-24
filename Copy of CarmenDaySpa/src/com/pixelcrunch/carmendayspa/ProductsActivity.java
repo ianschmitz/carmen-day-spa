@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ProductsActivity extends Activity {
 
@@ -20,6 +21,9 @@ public class ProductsActivity extends Activity {
 		list = (ListView) findViewById(R.id.list);
 		adapter = new ProductListAdapter(this, productImageURL);
 		list.setAdapter(adapter);
+		
+		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
+		actionBarTitle.setText(R.string.products);
 
 		// Creates the More Button
 		Button b = (Button) findViewById(R.id.btnActionBarBack);

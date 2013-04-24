@@ -12,6 +12,9 @@ public class AboutActivity extends Activity {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.about_layout);
        
+		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
+		actionBarTitle.setText(R.string.about);
+       
        TextView textView = (TextView) findViewById(R.id.aboutParagraph);
        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Chantelli_Antiqua.ttf");
        textView.setTypeface(typeFace);

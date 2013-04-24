@@ -2,6 +2,7 @@ package com.pixelcrunch.carmendayspa;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class ContactActivity extends Activity {
 	/** Called when the activity is first created. */
@@ -9,5 +10,8 @@ public class ContactActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.contact_layout);
+		
+		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
+		actionBarTitle.setText(R.string.contact);
 	}
 }

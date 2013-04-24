@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Home extends Activity {
 
@@ -13,6 +14,16 @@ public class Home extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dashboard_layout);
+		
+		/**
+		 * Make the action bar text and back button invisible and unclickable
+		 */
+		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
+		actionBarTitle.setVisibility(View.GONE);
+		
+		Button actionBarBack = (Button) findViewById(R.id.btnActionBarBack);
+		actionBarBack.setVisibility(View.GONE);
+		
 		/**
 		 * Creating all buttons instances
 		 * */
