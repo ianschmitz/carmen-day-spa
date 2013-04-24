@@ -28,7 +28,7 @@
         android:layout_weight="1" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnActionBarBack"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnMore" />

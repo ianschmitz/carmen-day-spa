@@ -22,7 +22,7 @@ public class ProductsActivity extends Activity {
 		list.setAdapter(adapter);
 
 		// Creates the More Button
-		Button b = (Button) findViewById(R.id.button1);
+		Button b = (Button) findViewById(R.id.btnActionBarBack);
 		b.setOnClickListener(listener);
 	}
 
