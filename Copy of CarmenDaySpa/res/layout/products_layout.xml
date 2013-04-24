@@ -11,10 +11,11 @@
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingTop="15dp" />
 
     <Button
-        android:id="@+id/btnActionBarBack"
+        android:id="@+id/btnMore"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnMore" />

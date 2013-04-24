@@ -7,34 +7,27 @@
 
     <include layout="@layout/actionbar_layout" />
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
-        <TextView
+        <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:padding="15dip"
-            android:text="@string/about"
-            android:textColor="#ff29549f"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/aboutParagraph"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
-            android:padding="15dip"
-            android:text="@string/aboutCarmen"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#ff0089" />
-
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/aboutParagraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:padding="15dip"
+                android:text="@string/aboutCarmen"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff0089" />
+        </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>

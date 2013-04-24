@@ -1,9 +1,12 @@
 package com.pixelcrunch.carmendayspa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,20 @@ public class ContactActivity extends Activity {
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.contact);
+
+		// ActionBar Back button
+		Button btnActionBarBack = (Button) findViewById(R.id.btnActionBarBack);
+
+		// Listening Back button click
+		btnActionBarBack.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View view) {
+				// Launching Home Screen
+				Intent i = new Intent(getApplicationContext(), Home.class);
+				startActivity(i);
+			}
+		});
 
 		/**
 		 * Display Rating Update in a Toast
@@ -32,10 +49,6 @@ public class ContactActivity extends Activity {
 						Toast.LENGTH_SHORT).show();
 			}
 		});
-
-		/**
-		 * 
-		 */
 
 	}
 

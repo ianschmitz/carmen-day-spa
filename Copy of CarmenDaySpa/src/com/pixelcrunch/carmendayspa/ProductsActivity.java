@@ -1,6 +1,7 @@
 package com.pixelcrunch.carmendayspa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,13 +22,37 @@ public class ProductsActivity extends Activity {
 		list = (ListView) findViewById(R.id.list);
 		adapter = new ProductListAdapter(this, productImageURL);
 		list.setAdapter(adapter);
-		
+
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.products);
 
-		// Creates the More Button
-		Button b = (Button) findViewById(R.id.btnActionBarBack);
-		b.setOnClickListener(listener);
+		// ActionBar Back button
+		Button btnActionBarBack = (Button) findViewById(R.id.btnActionBarBack);
+
+		// More button
+		Button btnMore = (Button) findViewById(R.id.btnMore);
+
+		// Listening Back button click
+		btnActionBarBack.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View view) {
+				// Launching Home Screen
+				Intent i = new Intent(getApplicationContext(), Home.class);
+				startActivity(i);
+			}
+		});
+
+		// Listening More button click
+		btnMore.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View view) {
+				// Do More things
+
+			}
+		});
+
 	}
 
 	@Override
@@ -35,16 +60,6 @@ public class ProductsActivity extends Activity {
 		list.setAdapter(null);
 		super.onDestroy();
 	}
-
-	// Implement Code for the more button
-	public OnClickListener listener = new OnClickListener() {
-		@Override
-		public void onClick(View arg0) {
-
-			// adapter.imageLoader.clearCache();
-			// adapter.notifyDataSetChanged();
-		}
-	};
 
 	// Array of Strings containing product image URLS
 	private String[] productImageURL = {
@@ -62,5 +77,5 @@ public class ProductsActivity extends Activity {
 			"http://www.sephora.com/productimages/sku/s1487248-main-grid.jpg",
 			"http://www.sephora.com/productimages/sku/s1489665-main-grid.jpg",
 			"http://www.sephora.com/productimages/sku/s1500859-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1498682-main-grid.jpg", }; 
+			"http://www.sephora.com/productimages/sku/s1498682-main-grid.jpg", };
 }

@@ -60,8 +60,9 @@ public final class R {
         public static final int ScrollView01=0x7f080003;
         public static final int ScrollView02=0x7f08000b;
         public static final int aboutParagraph=0x7f080000;
-        public static final int action_settings=0x7f08001b;
+        public static final int action_settings=0x7f08001c;
         public static final int btnActionBarBack=0x7f080001;
+        public static final int btnMore=0x7f08001b;
         public static final int btnSendFeedback=0x7f08000a;
         public static final int btn_about=0x7f080016;
         public static final int btn_booking=0x7f080013;
