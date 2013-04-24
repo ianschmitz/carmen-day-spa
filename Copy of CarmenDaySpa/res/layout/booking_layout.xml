@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_repeat"
-    android:orientation="vertical" >
- 
-    <include layout="@layout/actionbar_layout" />
- 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical" >
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
- 
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <!-- form controls here -->
+
         <TextView
+            android:id="@+id/tvBookingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookingTitle"
+            android:textSize="10pt" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/etBookingFirst"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="15dip"
-            android:text="@string/booking"
-            android:textColor="#ff29549f"
-            android:textSize="25dip"
-            android:textStyle="bold" />
+            android:hint="@string/contactFirstName"
+            android:inputType="textPersonName" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/etBookingLast"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/contactLastName"
+            android:inputType="textPersonName" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/etService"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/requestedService"
+            android:inputType="text" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/etEmailBooking"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/customerEmail"
+            android:inputType="textEmailAddress" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/etPhoneBooking"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/customerPhone"
+            android:inputType="textPassword|number"
+            android:password="true" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/etAddCommentsBooking"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/additionalComments"
+            android:inputType="textMultiLine" >
+        </EditText>
+
+        <Button
+            android:id="@+id/btnSendFeedback"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sendFeedback"
+            android:text="@string/bookButton" >
+        </Button>
     </LinearLayout>
- 
-</LinearLayout>
+
+</ScrollView>
