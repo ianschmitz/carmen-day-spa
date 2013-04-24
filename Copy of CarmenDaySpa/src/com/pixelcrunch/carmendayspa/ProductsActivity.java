@@ -58,5 +58,5 @@ public class ProductsActivity extends Activity {
 			"http://www.sephora.com/productimages/sku/s1487248-main-grid.jpg",
 			"http://www.sephora.com/productimages/sku/s1489665-main-grid.jpg",
 			"http://www.sephora.com/productimages/sku/s1500859-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1498682-main-grid.jpg", };
+			"http://www.sephora.com/productimages/sku/s1498682-main-grid.jpg", }; 
 }

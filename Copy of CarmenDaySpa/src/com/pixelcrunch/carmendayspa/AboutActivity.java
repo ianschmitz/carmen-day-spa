@@ -1,7 +1,9 @@
 package com.pixelcrunch.carmendayspa;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class AboutActivity extends Activity {
     /** Called when the activity is first created. */
@@ -9,5 +11,9 @@ public class AboutActivity extends Activity {
    public void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.about_layout);
+       
+       TextView textView = (TextView) findViewById(R.id.aboutParagraph);
+       Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Chantelli_Antiqua.ttf");
+       textView.setTypeface(typeFace);
    }
 }

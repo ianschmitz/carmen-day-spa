@@ -23,15 +23,18 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/aboutParagraph"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="center_vertical"
+            android:padding="15dip"
             android:text="@string/aboutCarmen"
             android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceMedium" >
-        </TextView>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ff0089" />
+
     </RelativeLayout>
 
 </LinearLayout>
