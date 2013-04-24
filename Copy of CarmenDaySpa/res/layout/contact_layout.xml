@@ -27,23 +27,25 @@
             android:hint="@string/contactFirstName"
             android:inputType="textPersonName" >
         </EditText>
-        
-          <EditText
+
+        <EditText
             android:id="@+id/etContactLast"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/contactLastName"
             android:inputType="textPersonName" >
         </EditText>
-   
-         <Spinner
-            android:id="@+id/spnFeedbackType"
+
+        <RatingBar
+            android:id="@+id/ratingBar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:prompt="@string/feedbackType" 
-            android:entries="@array/feedbackTypeList">
-        </Spinner>
-         <EditText
+            android:numStars="5"
+            android:rating="4.0"
+            android:stepSize="1.0" >
+        </RatingBar>
+
+        <EditText
             android:id="@+id/etFeedback"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

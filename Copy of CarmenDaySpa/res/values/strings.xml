@@ -13,5 +13,17 @@
     <string name="footerText">www.carmendayspa.ca</string>
     <string name="aboutCarmen">At Carmen’s Day Spa we are committed to ensuring complete customer satisfaction with our services and products. We offer a full range of spa services to help you look and feel better!\n\nCarmen is a licensed esthetician with twenty-two years of experience. Her success is based on providing the highest quality services and professional skin care products.\n\nWe are pleased to offer only the highest quality products including Dr. Renaud, NK Brown, Gehwol, Dr. Biodroga, OPI and Footlogix.</string>
     <string name="btnMore">More</string>
+    <string name="contactTitle">Contact Carmen</string>
+    <string name="contactFirstName">First Name</string>
+    <string name="contactLastName">Last Name</string>
+    <string name="feedback">Comments/Feedback</string>
+    <string name="bookingTitle">Book Appointment </string>
+    <string name="bookingFirstName">First Name</string>
+    <string name="bookingLastName">Last Name</string>
+    <string name="requestedService">Requested Service</string>
+    <string name="customerEmail">E-mail</string>
+    <string name="customerPhone">Phone #</string>
+    <string name="additionalComments">Comments</string>
+    <string name="bookButton">Submit</string>
 
 </resources>
