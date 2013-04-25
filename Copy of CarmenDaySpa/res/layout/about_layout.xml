@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent" 
+        android:fillViewport="true" >
+         
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -26,7 +28,7 @@
                 android:text="@string/aboutCarmen"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ff0089" />
+                android:textColor="#42526c" />
         </RelativeLayout>
     </ScrollView>
 
