@@ -20,6 +20,20 @@ public class ContactActivity extends Activity {
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.contactTitle);
 
+		/**
+		 * Clicking either the back button or the title on the action bar will
+		 * bring you back to the home screen
+		 */
+		actionBarTitle.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View view) {
+				// Launching Home Screen
+				Intent i = new Intent(getApplicationContext(), Home.class);
+				startActivity(i);
+			}
+		});
+
 		// ActionBar Back button
 		Button btnActionBarBack = (Button) findViewById(R.id.btnActionBarBack);
 
