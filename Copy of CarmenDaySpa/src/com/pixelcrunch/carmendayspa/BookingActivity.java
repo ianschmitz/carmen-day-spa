@@ -3,6 +3,7 @@ package com.pixelcrunch.carmendayspa;
 import java.util.Calendar;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -10,28 +11,44 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class BookingActivity extends Activity {
 	/** Called when the activity is first created. */
 	
+	// TIMEPICKER VARIABLES
 	private TextView tvDisplayTime;
 	private TimePicker timePicker1;
 	private Button btnChangeTime;
- 
 	private int hour;
 	private int minute;
  
 	static final int TIME_DIALOG_ID = 999;
+	
+	// DATEPICKER VARIABLES
+	private TextView tvDisplayDate;
+	private DatePicker dpResult;
+	private Button btnChangeDate;
+	private int year;
+	private int month;
+	private int day;
+
+	static final int DATE_DIALOG_ID = 998;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.booking_layout);
 		
+		// TIMEPICKER METHODS
 		setCurrentTimeOnView();
-		addListenerOnButton();
+		addListenerOnTimeButton();
+		
+		// DATEPICKER METHODS
+		setCurrentDateOnView();
+		addListenerOnDateButton();
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.bookingTitle);
@@ -71,8 +88,32 @@ public class BookingActivity extends Activity {
 			timePicker1.setCurrentMinute(minute);
 	 
 		}
+		
+		// display current date
+		public void setCurrentDateOnView() {
+
+			tvDisplayDate = (TextView) findViewById(R.id.tvDate);
+			dpResult = (DatePicker) findViewById(R.id.dpResult);
+
+			final Calendar c = Calendar.getInstance();
+			year = c.get(Calendar.YEAR);
+			month = c.get(Calendar.MONTH);
+			day = c.get(Calendar.DAY_OF_MONTH);
+
+			// set current date into textview
+			tvDisplayDate.setText(new StringBuilder()
+					// Month is 0 based, just add 1
+					.append(month + 1).append("-").append(day).append("-")
+					.append(year).append(" "));
+
+			// set current date into datepicker
+			dpResult.init(year, month, day, null);
+
+		}
+
 	 
-		public void addListenerOnButton() {
+		// LISTENER FOR THE CHANGE TIME BUTTON
+		public void addListenerOnTimeButton() {
 	 
 			btnChangeTime = (Button) findViewById(R.id.btnChangeTime);
 	 
@@ -88,6 +129,24 @@ public class BookingActivity extends Activity {
 			});
 	 
 		}
+		
+		// LISTENER FOR THE CHANGE DATE BUTTON
+		public void addListenerOnDateButton() {
+
+			btnChangeDate = (Button) findViewById(R.id.btnChangeDate);
+
+			btnChangeDate.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+
+					showDialog(DATE_DIALOG_ID);
+
+				}
+
+			});
+
+		}
 	 
 		@Override
 		protected Dialog onCreateDialog(int id) {
@@ -96,7 +155,13 @@ public class BookingActivity extends Activity {
 				// set time picker as current time
 				return new TimePickerDialog(this, 
 	                                        timePickerListener, hour, minute,false);
-	 
+				
+				
+			case DATE_DIALOG_ID:
+				// set date picker as current date
+				return new DatePickerDialog(this, datePickerListener, year, month,
+						day);
+				
 			}
 			return null;
 		}
@@ -118,6 +183,28 @@ public class BookingActivity extends Activity {
 	 
 			}
 		};
+		
+		private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+
+			// when dialog box is closed, below method will be called.
+			public void onDateSet(DatePicker view, int selectedYear,
+					int selectedMonth, int selectedDay) {
+				year = selectedYear;
+				month = selectedMonth;
+				day = selectedDay;
+
+				// set selected date into textview
+				tvDisplayDate.setText(new StringBuilder().append(month + 1)
+						.append("-").append(day).append("-").append(year)
+						.append(" "));
+
+				// set selected date into datepicker also
+				dpResult.init(year, month, day, null);
+
+			}
+		};
+
+	
 	 
 		private static String pad(int c) {
 			if (c >= 10)
