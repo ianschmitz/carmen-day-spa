@@ -18,7 +18,7 @@ public class ContactActivity extends Activity {
 		setContentView(R.layout.contact_layout);
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
-		actionBarTitle.setText(R.string.contact);
+		actionBarTitle.setText(R.string.contactTitle);
 
 		// ActionBar Back button
 		Button btnActionBarBack = (Button) findViewById(R.id.btnActionBarBack);
