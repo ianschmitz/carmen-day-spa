@@ -49,6 +49,11 @@
         <!-- About Activity -->
         <activity android:name="com.pixelcrunch.carmendayspa.AboutActivity" >
         </activity>
+        <!-- Single Product Activity -->
+        <activity
+            android:name="com.pixelcrunch.carmendayspa.SingleProduct"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
     </application>
 
 </manifest>

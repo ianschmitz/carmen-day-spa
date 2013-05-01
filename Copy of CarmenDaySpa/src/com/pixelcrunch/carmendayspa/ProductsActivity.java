@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,16 +13,33 @@ public class ProductsActivity extends Activity {
 
 	ListView list;
 	ProductListAdapter adapter;
+	ProductRetrieval products;
+	// we use a string to hold the name of our extra,
+	// it must include the full package name
+	// used to send selected product to the product page
+	public final static String ID_EXTRA = "com.pixelcrunch.carmendayspa._ID";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.products_layout);
+
 		// Creates the list where each item corresponds to a ListAdapter Item
 		list = (ListView) findViewById(R.id.list);
-		adapter = new ProductListAdapter(this, productImageURL);
+
+		// Get the list of products and their information,
+		// store the info into string arrays used in creating
+		// our list of products.
+		products = new ProductRetrieval();
+		String[] productImageURL = products.getImageURLS();
+		String[] productDescriptions = products.getProductDescriptions();
+		String[] productPrices = products.getProductPrices();
+
+		adapter = new ProductListAdapter(this, productImageURL,
+				productDescriptions, productPrices);
 		list.setAdapter(adapter);
 
+		// Set up action bar Title
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.products);
 
@@ -43,9 +60,6 @@ public class ProductsActivity extends Activity {
 		// ActionBar Back button
 		Button btnActionBarBack = (Button) findViewById(R.id.btnActionBarBack);
 
-		// More button
-		Button btnMore = (Button) findViewById(R.id.btnMore);
-
 		// Listening Back button click
 		btnActionBarBack.setOnClickListener(new View.OnClickListener() {
 
@@ -57,17 +71,42 @@ public class ProductsActivity extends Activity {
 			}
 		});
 
+		// ** INSERT IF STATEMENT TO MAKE SURE THERE ARE MORE ITEMS ON THE PHP
+		// FILE, IF NOT DISABLE THE MORE BUTTON**
+		// More button
+		Button btnMore = (Button) findViewById(R.id.btnMore);
+
 		// Listening More button click
 		btnMore.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
-				// Do More things
+				// Code to load the next 10 items from the php script
 
 			}
 		});
 
+		/**
+		 * onItemClickListener for our ListView
+		 */
+		list.setOnItemClickListener(onListClick);
+
 	}
+
+	/**
+	 * Will get which product the user has selected using onItemClickListener.
+	 * Then send the product data from that product to a new activity that will
+	 * be waiting for the info to start the product purchase page.
+	 */
+	private AdapterView.OnItemClickListener onListClick = new AdapterView.OnItemClickListener() {
+		public void onItemClick(AdapterView<?> parent, View view, int position,
+				long id) {
+			// Create intent
+			Intent i = new Intent(ProductsActivity.this, SingleProduct.class);
+			i.putExtra(ID_EXTRA, String.valueOf(id));
+			startActivity(i);
+		}
+	};
 
 	@Override
 	public void onDestroy() {
@@ -75,21 +114,4 @@ public class ProductsActivity extends Activity {
 		super.onDestroy();
 	}
 
-	// Array of Strings containing product image URLS
-	private String[] productImageURL = {
-			"http://www.sephora.com/productimages/sku/s1494251-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1493873-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1508274-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1514926-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1502855-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1497007-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1473727-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1478254-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1530013-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1498302-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1494236-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1487248-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1489665-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1500859-main-grid.jpg",
-			"http://www.sephora.com/productimages/sku/s1498682-main-grid.jpg", };
 }

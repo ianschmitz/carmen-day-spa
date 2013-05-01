@@ -12,21 +12,26 @@ import android.widget.TextView;
 public class ProductListAdapter extends BaseAdapter {
 
 	private Activity activity;
-	private String[] arrayOfImageURL;
+	private String[] imageURLS;
+	private String[] productDescriptions;
+	private String[] productPrices;
 	private static LayoutInflater inflater = null;
 	public ProductImageLoader imageLoader;
 
 	// Constructor *Add arguments for Array-Cost and Array-ProductDescription*
-	public ProductListAdapter(Activity a, String[] inURLStrings) {
+	public ProductListAdapter(Activity a, String[] inURLStrings,
+			String[] inProductDescriptions, String[] inProductPrice) {
 		activity = a;
-		arrayOfImageURL = inURLStrings;
+		imageURLS = inURLStrings;
+		productDescriptions = inProductDescriptions;
+		productPrices = inProductPrice;
 		inflater = (LayoutInflater) activity
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		imageLoader = new ProductImageLoader(activity.getApplicationContext());
 	}
 
 	public int getCount() {
-		return arrayOfImageURL.length;
+		return imageURLS.length;
 	}
 
 	public Object getItem(int position) {
@@ -47,11 +52,11 @@ public class ProductListAdapter extends BaseAdapter {
 		ImageView image = (ImageView) vi.findViewById(R.id.image);
 		// This is the product description, change to the
 		// array-ProductDescription
-		txtDescription.setText("Amazing Product #" + position);
+		txtDescription.setText(productDescriptions[position]);
 		// This is the product price, change to the array-ProductPrice
-		txtPrice.setText("$" + position);
+		txtPrice.setText("$" + productPrices[position]);
 		// This is the product Image, calls image loader to create the image
-		imageLoader.DisplayImage(arrayOfImageURL[position], image);
+		imageLoader.DisplayImage(imageURLS[position], image);
 		return vi;
 	}
 }

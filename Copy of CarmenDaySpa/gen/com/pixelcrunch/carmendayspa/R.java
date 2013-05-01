@@ -60,7 +60,7 @@ public final class R {
         public static final int ScrollView01=0x7f080003;
         public static final int ScrollView02=0x7f080011;
         public static final int aboutParagraph=0x7f080000;
-        public static final int action_settings=0x7f080022;
+        public static final int action_settings=0x7f080024;
         public static final int btnActionBarBack=0x7f080001;
         public static final int btnChangeDate=0x7f08000c;
         public static final int btnChangeTime=0x7f080009;
@@ -91,6 +91,8 @@ public final class R {
         public static final int timePicker1=0x7f08000b;
         public static final int tvActionBarTitle=0x7f080002;
         public static final int tvDate=0x7f08000d;
+        public static final int tvDescription=0x7f080022;
+        public static final int tvPrice=0x7f080023;
         public static final int tvTime=0x7f08000a;
     }
     public static final class layout {
@@ -105,9 +107,11 @@ public final class R {
         public static final int product_item=0x7f030008;
         public static final int products_layout=0x7f030009;
         public static final int services_layout=0x7f03000a;
+        public static final int single_product_layout=0x7f03000b;
     }
     public static final class menu {
         public static final int home=0x7f070000;
+        public static final int single_product=0x7f070001;
     }
     public static final class string {
         public static final int about=0x7f050008;
@@ -131,9 +135,11 @@ public final class R {
         public static final int feedback=0x7f05000f;
         public static final int footerText=0x7f050009;
         public static final int hello_world=0x7f050002;
+        public static final int product=0x7f050019;
         public static final int products=0x7f050007;
         public static final int requestedService=0x7f050013;
         public static final int services=0x7f050003;
+        public static final int title_activity_single_product=0x7f050018;
     }
     public static final class style {
         public static final int ActionBarCompat=0x7f060000;
@@ -149,8 +155,9 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060003;
+        public static final int AppBaseTheme=0x7f060004;
         public static final int DashboardButton=0x7f060001;
         public static final int FooterBar=0x7f060002;
+        public static final int Theme_Transparent=0x7f060003;
     }
 }

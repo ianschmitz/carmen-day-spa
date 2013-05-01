@@ -25,5 +25,7 @@
     <string name="customerPhone">Phone #</string>
     <string name="additionalComments">Comments</string>
     <string name="bookButton">Submit</string>
+    <string name="title_activity_single_product">SingleProduct</string>
+    <string name="product">Product</string>
 
 </resources>
