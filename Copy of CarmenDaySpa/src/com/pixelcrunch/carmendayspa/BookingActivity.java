@@ -119,6 +119,7 @@ public class BookingActivity extends Activity {
 	 
 			btnChangeTime.setOnClickListener(new OnClickListener() {
 	 
+				@SuppressWarnings("deprecation")
 				@Override
 				public void onClick(View v) {
 	 
@@ -137,6 +138,7 @@ public class BookingActivity extends Activity {
 
 			btnChangeDate.setOnClickListener(new OnClickListener() {
 
+				@SuppressWarnings("deprecation")
 				@Override
 				public void onClick(View v) {
 

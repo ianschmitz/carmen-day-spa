@@ -61,52 +61,39 @@
 			
             <Button
         android:id="@+id/btnChangeTime"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Choose Time" />
  
-    <TextView
-        android:id="@+id/lblTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current Time (H:M): "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
  
     <TextView
         android:id="@+id/tvTime"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
  
     <TimePicker
         android:id="@+id/timePicker1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     
     <Button
         android:id="@+id/btnChangeDate"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Select Date" />
-
-    <TextView
-        android:id="@+id/lblDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current Date (M-D-YYYY): "
-        android:textAppearance="?android:attr/textAppearanceLarge" />
   
     <TextView
         android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <DatePicker
         android:id="@+id/dpResult"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
 
