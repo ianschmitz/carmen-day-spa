@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class AboutActivity extends Activity {
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,16 @@ public class AboutActivity extends Activity {
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.about);
+		
+		
+		
+		
+		// FOR TESTING PURPOSES 
+		ProductRetrieval products = new ProductRetrieval();
+		// END OF TESTING
+		
+		
+		
 		
 		/**
 		 * Clicking either the back button or the title on the action bar 
