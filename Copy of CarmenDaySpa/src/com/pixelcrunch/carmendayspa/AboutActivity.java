@@ -24,7 +24,7 @@ public class AboutActivity extends Activity {
 		
 		// FOR TESTING PURPOSES 
 		ProductRetrieval products = new ProductRetrieval();
-		// END OF TESTING
+		// END OF PRODUCT RETRIEVAL TEST
 		
 		
 		
