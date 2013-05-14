@@ -43,6 +43,7 @@ public class ProductRetrieval {
 					"http://74.124.197.190/~carmen21/prod_display.php");
 
 			// Hold read data
+			// BREAKS APP
 			in = new BufferedReader(new InputStreamReader(carmen.openStream()));
 
 		} catch (MalformedURLException e) {
@@ -90,7 +91,7 @@ public class ProductRetrieval {
 			offset += 5;
 		}
 	}
-	
+
 	public List<String> getProductNames() {
 
 		return productNames;
@@ -112,7 +113,7 @@ public class ProductRetrieval {
 	}
 
 	public List<String> getProductDescriptions() {
-		
+
 		return productDescriptions;
 	}
 

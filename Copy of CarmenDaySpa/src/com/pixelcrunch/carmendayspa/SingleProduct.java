@@ -1,5 +1,7 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,9 +17,9 @@ public class SingleProduct extends Activity {
 	String passedVar = null;
 	private TextView passedView = null;
 
-	String[] descriptions;
-	String[] prices;
-	String[] imageURLS;
+	List<String> descriptions;
+	List<String> prices;
+	List<String> imageURLS;
 	int productID;
 
 	@Override
@@ -33,7 +35,7 @@ public class SingleProduct extends Activity {
 		products = new ProductRetrieval();
 		descriptions = products.getProductDescriptions();
 		prices = products.getProductPrices();
-		imageURLS = products.getImageURLS();
+		imageURLS = products.getImageURL();
 
 		/**
 		 * Clicking either the back button or the title on the action bar will
@@ -76,8 +78,8 @@ public class SingleProduct extends Activity {
 		TextView description = (TextView) findViewById(R.id.tvDescription);
 		TextView price = (TextView) findViewById(R.id.tvPrice);
 
-		description.setText(descriptions[productID]);
-		price.setText(prices[productID]);
+		description.setText(descriptions.get(productID));
+		price.setText(prices.get(productID));
 
 	}
 
