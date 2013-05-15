@@ -1,10 +1,11 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.io.IOException;
 import java.util.List;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +33,12 @@ public class SingleProduct extends Activity {
 		actionBarTitle.setText(R.string.product);
 
 		// Get our list of products
-		products = new ProductRetrieval();
+		try {
+			products = new ProductRetrieval();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		descriptions = products.getProductDescriptions();
 		prices = products.getProductPrices();
 		imageURLS = products.getImageURL();

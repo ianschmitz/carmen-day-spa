@@ -1,5 +1,7 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -23,7 +25,12 @@ public class AboutActivity extends Activity {
 		
 		
 		// FOR TESTING PURPOSES 
-		ProductRetrieval products = new ProductRetrieval();
+		try {
+			ProductRetrieval products = new ProductRetrieval();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// END OF PRODUCT RETRIEVAL TEST
 		
 		

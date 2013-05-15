@@ -1,5 +1,6 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.io.IOException;
 import java.util.List;
 
 import android.app.Activity;
@@ -32,7 +33,12 @@ public class ProductsActivity extends Activity {
 		// Get the list of products and their information,
 		// store the info into string arrays used in creating
 		// our list of products.
-		products = new ProductRetrieval();
+		try {
+			products = new ProductRetrieval();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		List<String> productImageURL = products.getImageURL();
 		List<String> productDescriptions = products.getProductDescriptions();
 		List<String> productPrices = products.getProductPrices();
