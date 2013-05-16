@@ -20,22 +20,7 @@ public class AboutActivity extends Activity {
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.about);
-		
-		
-		
-		
-		// FOR TESTING PURPOSES 
-		try {
-			ProductRetrieval products = new ProductRetrieval();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// END OF PRODUCT RETRIEVAL TEST
-		
-		
-		
-		
+
 		/**
 		 * Clicking either the back button or the title on the action bar 
 		 * will bring you back to the home screen

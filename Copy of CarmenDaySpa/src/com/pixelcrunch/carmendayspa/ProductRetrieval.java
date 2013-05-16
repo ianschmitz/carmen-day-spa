@@ -1,78 +1,93 @@
 package com.pixelcrunch.carmendayspa;
 
+import android.os.AsyncTask;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class ProductRetrieval {
 
-	private static String carmanURL = "http://74.124.197.190/~carmen21/prod_display.php";
+    private static String carmanURL = "http://74.124.197.190/~carmen21/prod_display.php";
+    private List<String> items;
+    private String productPageString;
+    private List<String> productInformation;
+    private List<String> productNames = new ArrayList<String>();
+    private List<String> productPrices = new ArrayList<String>();
+    private List<String> productInventory = new ArrayList<String>();
+    private List<String> productNumbers = new ArrayList<String>();
+    // Array of Strings containing product image URLS
+    private List<String> productImageURL = new ArrayList<String>();
+    // Array of Strings containing product Descriptions
+    private List<String> productDescriptions = new ArrayList<String>();
 
-	private List<String> items;
+    public ProductRetrieval() throws IOException {
+        try {
+            new FetchURLContent().execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
-	private String productPageString;
 
-	private List<String> productInformation;
+    }
 
-	private List<String> productNames = new ArrayList<String>();
+    public List<String> getProductNames() {
 
-	private List<String> productPrices = new ArrayList<String>();
+        return productNames;
+    }
 
-	private List<String> productInventory = new ArrayList<String>();
+    public List<String> getImageURL() {
 
-	private List<String> productNumbers = new ArrayList<String>();
+        return productImageURL;
+    }
 
-	// Array of Strings containing product image URLS
-	private List<String> productImageURL = new ArrayList<String>();
+    public List<String> getProductNumbers() {
 
-	// Array of Strings containing product Descriptions
-	private List<String> productDescriptions = new ArrayList<String>();
+        return productNumbers;
+    }
 
-	public ProductRetrieval() throws IOException {
+    public List<String> getProductInventory() {
 
-		// I have a feeling the issue has to do with threads
-		//android.os.NetworkOnMainThreadException
-		String out = new Scanner(new URL(carmanURL).openStream(), "UTF-8")
-				.useDelimiter("\\A").next();
+        return productInventory;
+    }
 
-		List<String> lineContent = Arrays.asList(out.split(","));
-		productNumbers.add(lineContent.get(0));
-		productNames.add(lineContent.get(1));
-		productPrices.add(lineContent.get(2));
-		productInventory.add(lineContent.get(3));
-		productDescriptions.add(lineContent.get(4));
-		productImageURL.add(lineContent.get(5));
-	}
+    public List<String> getProductDescriptions() {
 
-	public List<String> getProductNames() {
+        return productDescriptions;
+    }
 
-		return productNames;
-	}
+    public List<String> getProductPrices() {
+        return productPrices;
+    }
 
-	public List<String> getImageURL() {
+    private class FetchURLContent extends AsyncTask<Void, Void, Void> {
+        protected Void doInBackground(Void... Void) {
 
-		return productImageURL;
-	}
+            String out = null;
+            try {
+                out = new Scanner(new URL(carmanURL).openStream(), "UTF-8")
+                        .useDelimiter("\\A").next();
+            } catch (IOException e) {
+                return null;
+            }
 
-	public List<String> getProductNumbers() {
+            List<String> lineContent = Arrays.asList(out.split(","));
+            productNumbers.add(lineContent.get(0));
+            productNames.add(lineContent.get(1));
+            productPrices.add(lineContent.get(2));
+            productInventory.add(lineContent.get(3));
+            productDescriptions.add(lineContent.get(4));
+            productImageURL.add(lineContent.get(5));
 
-		return productNumbers;
-	}
-
-	public List<String> getProductInventory() {
-
-		return productInventory;
-	}
-
-	public List<String> getProductDescriptions() {
-
-		return productDescriptions;
-	}
-
-	public List<String> getProductPrices() {
-		return productPrices;
-	}
+            return null;
+        }
+    }
 }
+
+
