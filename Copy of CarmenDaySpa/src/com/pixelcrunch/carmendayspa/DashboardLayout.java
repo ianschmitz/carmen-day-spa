@@ -27,181 +27,187 @@ import android.view.ViewGroup;
  */
 public class DashboardLayout extends ViewGroup {
 
-    private static final int UNEVEN_GRID_PENALTY_MULTIPLIER = 10;
+	private static final int UNEVEN_GRID_PENALTY_MULTIPLIER = 10;
 
-    private int mMaxChildWidth = 0;
-    private int mMaxChildHeight = 0;
+	private int mMaxChildWidth = 0;
+	private int mMaxChildHeight = 0;
 
-    // Constructors
-    public DashboardLayout(Context context) {
-        super(context, null);
-    }
+	// Constructors
+	public DashboardLayout(Context context) {
+		super(context, null);
+	}
 
-    public DashboardLayout(Context context, AttributeSet attrs) {
-        super(context, attrs, 0);
-    }
+	public DashboardLayout(Context context, AttributeSet attrs) {
+		super(context, attrs, 0);
+	}
 
-    public DashboardLayout(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-    // End Constructors
+	public DashboardLayout(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+	}
 
-    // View.onMeasure is Called to determine the size requirements for this view and all of its children.
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        mMaxChildWidth = 0;
-        mMaxChildHeight = 0;
+	// End Constructors
 
-        // **Measure once to find the maximum child size.**
+	// View.onMeasure is Called to determine the size requirements for this view
+	// and all of its children.
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		mMaxChildWidth = 0;
+		mMaxChildHeight = 0;
 
-        // View.MeasureSpec encapsulates the layout requirements passed from parent to child.
-        // Each MeasureSpec represents a requirement for either the width or the height.
-        // A MeasureSpec is comprised of a size and a mode.
+		// **Measure once to find the maximum child size.**
 
-        int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
-                MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.AT_MOST);
-        int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(
-                MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.AT_MOST);
+		// View.MeasureSpec encapsulates the layout requirements passed from
+		// parent to child.
+		// Each MeasureSpec represents a requirement for either the width or the
+		// height.
+		// A MeasureSpec is comprised of a size and a mode.
 
-        // if the child (in our case dashboard icon) is visible,
-        // measure all the children to get the max width,
-        // set that to mMaxChildWidth and mMaxCHildHeight for later.
-        final int count = getChildCount();
-        for (int i = 0; i < count; i++) {
-            final View child = getChildAt(i);
-            if (child.getVisibility() == GONE) {
-                continue;
-            }
-            //* child.measure calls onMeasure *
-            child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+		int childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(
+				MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.AT_MOST);
+		int childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(
+				MeasureSpec.getSize(widthMeasureSpec), MeasureSpec.AT_MOST);
 
-            mMaxChildWidth = Math.max(mMaxChildWidth, child.getMeasuredWidth());
-            mMaxChildHeight = Math.max(mMaxChildHeight,
-                    child.getMeasuredHeight());
-        }
+		// if the child (in our case dashboard icon) is visible,
+		// measure all the children to get the max width,
+		// set that to mMaxChildWidth and mMaxCHildHeight for later.
+		final int count = getChildCount();
+		for (int i = 0; i < count; i++) {
+			final View child = getChildAt(i);
+			if (child.getVisibility() == GONE) {
+				continue;
+			}
+			// * child.measure calls onMeasure *
+			child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
 
-        // Measure again for each child to be exactly the same size.
+			mMaxChildWidth = Math.max(mMaxChildWidth, child.getMeasuredWidth());
+			mMaxChildHeight = Math.max(mMaxChildHeight,
+					child.getMeasuredHeight());
+		}
 
-        childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(mMaxChildWidth,
-                MeasureSpec.EXACTLY);
-        childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(mMaxChildHeight,
-                MeasureSpec.EXACTLY);
+		// Measure again for each child to be exactly the same size.
 
-        // set each visible child to those exact measureSpec's so they are all the same size
-        for (int i = 0; i < count; i++) {
-            final View child = getChildAt(i);
-            if (child.getVisibility() == GONE) {
-                continue;
-            }
+		childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(mMaxChildWidth,
+				MeasureSpec.EXACTLY);
+		childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(mMaxChildHeight,
+				MeasureSpec.EXACTLY);
 
-            child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        }
+		// set each visible child to those exact measureSpec's so they are all
+		// the same size
+		for (int i = 0; i < count; i++) {
+			final View child = getChildAt(i);
+			if (child.getVisibility() == GONE) {
+				continue;
+			}
 
-        setMeasuredDimension(resolveSize(mMaxChildWidth, widthMeasureSpec),
-                resolveSize(mMaxChildHeight, heightMeasureSpec));
-    }
+			child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+		}
 
-    // *Called when this view should assign a size and position to all of its children
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        int width = r - l;
-        int height = b - t;
+		setMeasuredDimension(resolveSize(mMaxChildWidth, widthMeasureSpec),
+				resolveSize(mMaxChildHeight, heightMeasureSpec));
+	}
 
-        final int count = getChildCount();
+	// *Called when this view should assign a size and position to all of its
+	// children
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		int width = r - l;
+		int height = b - t;
 
-        // Calculate the number of visible children.
-        int visibleCount = 0;
-        for (int i = 0; i < count; i++) {
-            final View child = getChildAt(i);
-            if (child.getVisibility() == GONE) {
-                continue;
-            }
-            ++visibleCount;
-        }
+		final int count = getChildCount();
 
-        if (visibleCount == 0) {
-            return;
-        }
+		// Calculate the number of visible children.
+		int visibleCount = 0;
+		for (int i = 0; i < count; i++) {
+			final View child = getChildAt(i);
+			if (child.getVisibility() == GONE) {
+				continue;
+			}
+			++visibleCount;
+		}
 
-        // Calculate what number of rows and columns will optimize for even
-        // horizontal and
-        // vertical whitespace between items. Start with a 1 x N grid, then try
-        // 2 x N, and so on.
-        int bestSpaceDifference = Integer.MAX_VALUE;
-        int spaceDifference;
+		if (visibleCount == 0) {
+			return;
+		}
 
-        // Horizontal and vertical space between items
-        int hSpace = 0;
-        int vSpace = 0;
+		// Calculate what number of rows and columns will optimize for even
+		// horizontal and
+		// vertical whitespace between items. Start with a 1 x N grid, then try
+		// 2 x N, and so on.
+		int bestSpaceDifference = Integer.MAX_VALUE;
+		int spaceDifference;
 
-        int cols = 1;
-        int rows;
+		// Horizontal and vertical space between items
+		int hSpace = 0;
+		int vSpace = 0;
 
-        while (true) {
-            rows = (visibleCount - 1) / cols + 1;
+		int cols = 1;
+		int rows;
 
-            hSpace = ((width - mMaxChildWidth * cols) / (cols + 1));
-            vSpace = ((height - mMaxChildHeight * rows) / (rows + 1));
+		while (true) {
+			rows = (visibleCount - 1) / cols + 1;
 
-            spaceDifference = Math.abs(vSpace - hSpace);
-            if (rows * cols != visibleCount) {
-                spaceDifference *= UNEVEN_GRID_PENALTY_MULTIPLIER;
-            }
+			hSpace = ((width - mMaxChildWidth * cols) / (cols + 1));
+			vSpace = ((height - mMaxChildHeight * rows) / (rows + 1));
 
-            if (spaceDifference < bestSpaceDifference) {
-                // Found a better whitespace squareness/ratio
-                bestSpaceDifference = spaceDifference;
+			spaceDifference = Math.abs(vSpace - hSpace);
+			if (rows * cols != visibleCount) {
+				spaceDifference *= UNEVEN_GRID_PENALTY_MULTIPLIER;
+			}
 
-                // If we found a better whitespace squareness and there's only 1
-                // row, this is
-                // the best we can do.
-                if (rows == 1) {
-                    break;
-                }
-            } else {
-                // This is a worse whitespace ratio, use the previous value of
-                // cols and exit.
-                --cols;
-                rows = (visibleCount - 1) / cols + 1;
-                hSpace = ((width - mMaxChildWidth * cols) / (cols + 1));
-                vSpace = ((height - mMaxChildHeight * rows) / (rows + 1));
-                break;
-            }
+			if (spaceDifference < bestSpaceDifference) {
+				// Found a better whitespace squareness/ratio
+				bestSpaceDifference = spaceDifference;
 
-            ++cols;
-        }
+				// If we found a better whitespace squareness and there's only 1
+				// row, this is
+				// the best we can do.
+				if (rows == 1) {
+					break;
+				}
+			} else {
+				// This is a worse whitespace ratio, use the previous value of
+				// cols and exit.
+				--cols;
+				rows = (visibleCount - 1) / cols + 1;
+				hSpace = ((width - mMaxChildWidth * cols) / (cols + 1));
+				vSpace = ((height - mMaxChildHeight * rows) / (rows + 1));
+				break;
+			}
 
-        // Lay out children based on calculated best-fit number of rows and
-        // cols.
+			++cols;
+		}
 
-        // If we chose a layout that has negative horizontal or vertical space,
-        // force it to zero.
-        hSpace = Math.max(0, hSpace);
-        vSpace = Math.max(0, vSpace);
+		// Lay out children based on calculated best-fit number of rows and
+		// cols.
 
-        // Re-use width/height variables to be child width/height.
-        width = (width - hSpace * (cols + 1)) / cols;
-        height = (height - vSpace * (rows + 1)) / rows;
+		// If we chose a layout that has negative horizontal or vertical space,
+		// force it to zero.
+		hSpace = Math.max(0, hSpace);
+		vSpace = Math.max(0, vSpace);
 
-        int left, top;
-        int col, row;
-        int visibleIndex = 0;
-        for (int i = 0; i < count; i++) {
-            final View child = getChildAt(i);
-            if (child.getVisibility() == GONE) {
-                continue;
-            }
+		// Re-use width/height variables to be child width/height.
+		width = (width - hSpace * (cols + 1)) / cols;
+		height = (height - vSpace * (rows + 1)) / rows;
 
-            row = visibleIndex / cols;
-            col = visibleIndex % cols;
+		int left, top;
+		int col, row;
+		int visibleIndex = 0;
+		for (int i = 0; i < count; i++) {
+			final View child = getChildAt(i);
+			if (child.getVisibility() == GONE) {
+				continue;
+			}
 
-            left = hSpace * (col + 1) + width * col;
-            top = vSpace * (row + 1) + height * row;
+			row = visibleIndex / cols;
+			col = visibleIndex % cols;
 
-            child.layout(left, top, (hSpace == 0 && col == cols - 1) ? r
-                    : (left + width), (vSpace == 0 && row == rows - 1) ? b
-                    : (top + height));
-            ++visibleIndex;
-        }
-    }
+			left = hSpace * (col + 1) + width * col;
+			top = vSpace * (row + 1) + height * row;
+
+			child.layout(left, top, (hSpace == 0 && col == cols - 1) ? r
+					: (left + width), (vSpace == 0 && row == rows - 1) ? b
+					: (top + height));
+			++visibleIndex;
+		}
+	}
 }
