@@ -78,12 +78,17 @@ public class ProductRetrieval {
             }
 
             List<String> lineContent = Arrays.asList(out.split(","));
-            productNumbers.add(lineContent.get(0));
-            productNames.add(lineContent.get(1));
-            productPrices.add(lineContent.get(2));
-            productInventory.add(lineContent.get(3));
-            productDescriptions.add(lineContent.get(4));
-            productImageURL.add(lineContent.get(5));
+            int offset = 0;
+            for (int i = 0; i < lineContent.size() - 1; i+= 6) {
+                productNumbers.add(lineContent.get(offset + 0));
+                productNames.add(lineContent.get(offset + 1));
+                productPrices.add(lineContent.get(offset + 2));
+                productInventory.add(lineContent.get(offset + 3));
+                productDescriptions.add(lineContent.get(offset + 4));
+                productImageURL.add(lineContent.get(offset + 5));
+
+                offset += 6;
+            }
 
             return null;
         }

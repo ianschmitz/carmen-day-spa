@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_repeat"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/bg_repeat"
+              android:orientation="vertical">
 
-    <include layout="@layout/actionbar_layout" />
+    <include layout="@layout/actionbar_layout"/>
 
     <ScrollView
-        android:id="@+id/ScrollView01"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="vertical" >
+            android:id="@+id/ScrollView01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical" >
-
-            <EditText
-                android:id="@+id/etBookingFirst"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/bookingFirstName"
-                android:inputType="textPersonName" >
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <EditText
+                    android:id="@+id/etBookingFirst"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/bookingFirstName"
+                    android:inputType="textPersonName">
             </EditText>
 
             <EditText
-                android:id="@+id/etBookingLast"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/bookingLastName"
-                android:inputType="textPersonName" >
-            </EditText>
-            
-            <EditText
-                android:id="@+id/etEmailBooking"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customerEmail"
-                android:inputType="textEmailAddress" >
-            </EditText>
-            
-              <EditText
-                android:id="@+id/etPhoneBooking"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/customerPhone"
-                android:inputType="phone" >
+                    android:id="@+id/etBookingLast"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/bookingLastName"
+                    android:inputType="textPersonName">
             </EditText>
 
             <EditText
-                android:id="@+id/etService"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/requestedService"
-                android:inputType="text" >
+                    android:id="@+id/etEmailBooking"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/customerEmail"
+                    android:inputType="textEmailAddress">
             </EditText>
-			
-            <Button
-        android:id="@+id/btnChangeTime"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose Time" />
- 
- 
-    <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ecca4a" />
- 
-    <TimePicker
-        android:id="@+id/timePicker1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-    
-    <Button
-        android:id="@+id/btnChangeDate"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Date" />
-  
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ecca4a" />
-
-    <DatePicker
-        android:id="@+id/dpResult"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
 
             <EditText
-                android:id="@+id/etAddCommentsBooking"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="top"
-                android:hint="@string/additionalComments"
-                android:inputType="textMultiLine"
-                android:lines="5"
-                android:singleLine="true" >
+                    android:id="@+id/etPhoneBooking"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/customerPhone"
+                    android:inputType="phone">
+            </EditText>
+
+            <EditText
+                    android:id="@+id/etService"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/requestedService"
+                    android:inputType="text">
             </EditText>
 
             <Button
-                android:id="@+id/btnSendFeedback"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:onClick="sendFeedback"
-                android:text="@string/bookButton" >
+                    android:id="@+id/btnChangeTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Time"/>
+
+
+            <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ecca4a"/>
+
+            <TimePicker
+                    android:id="@+id/timePicker1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+            <Button
+                    android:id="@+id/btnChangeDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Date"/>
+
+            <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ecca4a"/>
+
+            <DatePicker
+                    android:id="@+id/dpResult"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+
+            <EditText
+                    android:id="@+id/etAddCommentsBooking"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="@string/additionalComments"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:singleLine="true">
+            </EditText>
+
+            <Button
+                    android:id="@+id/btnSendFeedback"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sendFeedback"
+                    android:text="@string/bookButton">
             </Button>
         </LinearLayout>
     </ScrollView>

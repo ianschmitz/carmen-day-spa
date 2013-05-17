@@ -1,55 +1,55 @@
 <com.pixelcrunch.carmendayspa.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_weight="1"
-    android:background="@drawable/bg_repeat" >
+                                              android:layout_width="fill_parent"
+                                              android:layout_height="fill_parent"
+                                              android:layout_weight="1"
+                                              android:background="@drawable/bg_repeat">
 
     <!--   Services Button -->
 
     <Button
-        android:id="@+id/btn_services"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/btn_newsfeed"
-        android:text="@string/services" />
+            android:id="@+id/btn_services"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/btn_newsfeed"
+            android:text="@string/services"/>
 
     <!--   Products Button -->
 
     <Button
-        android:id="@+id/btn_products"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/btn_messages"
-        android:text="@string/products" />
+            android:id="@+id/btn_products"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/btn_messages"
+            android:text="@string/products"/>
 
     <!--   Booking Button -->
 
     <Button
-        android:id="@+id/btn_booking"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/btn_events"
-        android:text="@string/booking" />
+            android:id="@+id/btn_booking"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/btn_events"
+            android:text="@string/booking"/>
 
     <!--   Directions Button -->
 
     <Button
-        android:id="@+id/btn_directions"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/btn_places"
-        android:text="@string/directions" />
+            android:id="@+id/btn_directions"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/btn_places"
+            android:text="@string/directions"/>
 
     <!--   Contact Button -->
 
     <Button
-        android:id="@+id/btn_contact"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/btn_friends"
-        android:text="@string/contact" />
+            android:id="@+id/btn_contact"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/btn_friends"
+            android:text="@string/contact"/>
 
     <!--   About Us Button -->
 
     <Button
-        android:id="@+id/btn_about"
-        style="@style/DashboardButton"
-        android:drawableTop="@drawable/btn_photos"
-        android:text="@string/about" />
+            android:id="@+id/btn_about"
+            style="@style/DashboardButton"
+            android:drawableTop="@drawable/btn_photos"
+            android:text="@string/about"/>
 
 </com.pixelcrunch.carmendayspa.DashboardLayout>
