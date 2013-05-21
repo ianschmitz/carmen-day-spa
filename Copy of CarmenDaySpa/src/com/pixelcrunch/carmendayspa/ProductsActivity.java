@@ -34,7 +34,7 @@ public class ProductsActivity extends Activity {
 		// store the info into string arrays used in creating
 		// our list of products.
 		try {
-			products = new ProductRetrieval();
+			products = new ProductRetrieval(ProductsActivity.this);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,20 +79,6 @@ public class ProductsActivity extends Activity {
 			}
 		});
 
-		// ** INSERT IF STATEMENT TO MAKE SURE THERE ARE MORE ITEMS ON THE PHP
-		// FILE, IF NOT DISABLE THE MORE BUTTON**
-		// More button
-		Button btnMore = (Button) findViewById(R.id.btnMore);
-
-		// Listening More button click
-		btnMore.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View view) {
-				// Code to load the next 10 items from the php script
-
-			}
-		});
 
 		/**
 		 * onItemClickListener for our ListView

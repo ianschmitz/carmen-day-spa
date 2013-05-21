@@ -1,5 +1,7 @@
 package com.pixelcrunch.carmendayspa;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 
 import java.io.IOException;
@@ -12,87 +14,98 @@ import java.util.concurrent.ExecutionException;
 
 public class ProductRetrieval {
 
-    private static String carmanURL = "http://74.124.197.190/~carmen21/prod_display.php";
-    private List<String> items;
-    private String productPageString;
-    private List<String> productInformation;
-    private List<String> productNames = new ArrayList<String>();
-    private List<String> productPrices = new ArrayList<String>();
-    private List<String> productInventory = new ArrayList<String>();
-    private List<String> productNumbers = new ArrayList<String>();
-    // Array of Strings containing product image URLS
-    private List<String> productImageURL = new ArrayList<String>();
-    // Array of Strings containing product Descriptions
-    private List<String> productDescriptions = new ArrayList<String>();
+	private static String carmanURL = "http://74.124.197.190/~carmen21/prod_display.php";
+	private List<String> productNames = new ArrayList<String>();
+	private List<String> productPrices = new ArrayList<String>();
+	private List<String> productInventory = new ArrayList<String>();
+	private List<String> productNumbers = new ArrayList<String>();
+	// Array of Strings containing product image URLS
+	private List<String> productImageURL = new ArrayList<String>();
+	// Array of Strings containing product Descriptions
+	private List<String> productDescriptions = new ArrayList<String>();
+	Context thisActivity;
 
-    public ProductRetrieval() throws IOException {
-        try {
-            new FetchURLContent().execute().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+	public ProductRetrieval(Context calledActivity) throws IOException {
+		thisActivity = calledActivity;
+		try {
+			new FetchURLContent().execute().get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 
+	}
 
-    }
+	public List<String> getProductNames() {
 
-    public List<String> getProductNames() {
+		return productNames;
+	}
 
-        return productNames;
-    }
+	public List<String> getImageURL() {
 
-    public List<String> getImageURL() {
+		return productImageURL;
+	}
 
-        return productImageURL;
-    }
+	public List<String> getProductNumbers() {
 
-    public List<String> getProductNumbers() {
+		return productNumbers;
+	}
 
-        return productNumbers;
-    }
+	public List<String> getProductInventory() {
 
-    public List<String> getProductInventory() {
+		return productInventory;
+	}
 
-        return productInventory;
-    }
+	public List<String> getProductDescriptions() {
 
-    public List<String> getProductDescriptions() {
+		return productDescriptions;
+	}
 
-        return productDescriptions;
-    }
+	public List<String> getProductPrices() {
+		return productPrices;
+	}
 
-    public List<String> getProductPrices() {
-        return productPrices;
-    }
+	private class FetchURLContent extends AsyncTask<Void, Void, Void> {
+		ProgressDialog progressDialog;
 
-    private class FetchURLContent extends AsyncTask<Void, Void, Void> {
-        protected Void doInBackground(Void... Void) {
+		@Override
+		protected void onPreExecute() {
+			progressDialog = ProgressDialog.show( thisActivity,
+					"Loading Content", "please wait",
+					true);
+		};
 
-            String out = null;
-            try {
-                out = new Scanner(new URL(carmanURL).openStream(), "UTF-8")
-                        .useDelimiter("\\A").next();
-            } catch (IOException e) {
-                return null;
-            }
+		protected Void doInBackground(Void... Void) {
+			String out = null;
+			try {
+				out = new Scanner(new URL(carmanURL).openStream(), "UTF-8")
+						.useDelimiter("\\A").next();
+			} catch (IOException e) {
+				return null;
+			}
 
-            List<String> lineContent = Arrays.asList(out.split(","));
-            int offset = 0;
-            for (int i = 0; i < lineContent.size() - 1; i+= 6) {
-                productNumbers.add(lineContent.get(offset + 0));
-                productNames.add(lineContent.get(offset + 1));
-                productPrices.add(lineContent.get(offset + 2));
-                productInventory.add(lineContent.get(offset + 3));
-                productDescriptions.add(lineContent.get(offset + 4));
-                productImageURL.add(lineContent.get(offset + 5));
+			List<String> lineContent = Arrays.asList(out.split(","));
+			int offset = 0;
+			for (int i = 0; i < lineContent.size() - 1; i += 6) {
+				productNumbers.add(lineContent.get(offset + 0));
+				productNames.add(lineContent.get(offset + 1));
+				productPrices.add(lineContent.get(offset + 2));
+				productInventory.add(lineContent.get(offset + 3));
+				productDescriptions.add(lineContent.get(offset + 4));
+				productImageURL.add(lineContent.get(offset + 5));
 
-                offset += 6;
-            }
-
-            return null;
-        }
-    }
+				offset += 6;
+			}
+			return null;
+		}
+		
+	    @Override
+	    protected void onPostExecute(Void result)
+	    {
+	        super.onPostExecute(result);
+	        progressDialog.dismiss();
+	    };
+	    
+	}
 }
-
-

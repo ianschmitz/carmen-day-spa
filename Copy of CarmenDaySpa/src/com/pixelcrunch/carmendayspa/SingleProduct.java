@@ -37,7 +37,7 @@ public class SingleProduct extends Activity {
 
 		// Get our list of products
 		try {
-			products = new ProductRetrieval();
+			products = new ProductRetrieval(SingleProduct.this);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
