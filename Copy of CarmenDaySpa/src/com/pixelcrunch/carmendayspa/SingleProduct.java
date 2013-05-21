@@ -23,6 +23,7 @@ public class SingleProduct extends Activity {
 	List<String> descriptions;
 	List<String> prices;
 	List<String> imageURLS;
+	List<String> productNames;
 	int productID;
 
 	@Override
@@ -30,9 +31,9 @@ public class SingleProduct extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.single_product_layout);
 
-		// Correctly name the page title
+		// Resize the actionBarTitle text to fit long product names
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
-		actionBarTitle.setText(R.string.product);
+		actionBarTitle.setTextSize(16);
 
 		// Get our list of products
 		try {
@@ -41,24 +42,23 @@ public class SingleProduct extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		descriptions = products.getProductDescriptions();
 		prices = products.getProductPrices();
 		imageURLS = products.getImageURL();
+		productNames = products.getProductNames();
 
 		imageLoader = new ProductImageLoader(getApplicationContext());
 
 		/**
 		 * Clicking either the back button or the title on the action bar will
-		 * bring you back to the home screen
+		 * bring you BACK to the home screen
 		 */
 		actionBarTitle.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View view) {
 				// Launching Home Screen
-				Intent i = new Intent(getApplicationContext(),
-						ProductsActivity.class);
-				startActivity(i);
+				SingleProduct.this.finish();
 			}
 		});
 
@@ -67,13 +67,10 @@ public class SingleProduct extends Activity {
 
 		// Listening Back button click
 		btnActionBarBack.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View view) {
 				// Launching Home Screen
-				Intent i = new Intent(getApplicationContext(),
-						ProductsActivity.class);
-				startActivity(i);
+				SingleProduct.this.finish();
 			}
 		});
 
@@ -90,8 +87,9 @@ public class SingleProduct extends Activity {
 		ImageView img = (ImageView) findViewById(R.id.imgProduct);
 
 		description.setText(descriptions.get(productID));
-		price.setText(prices.get(productID));
+		price.setText("$" + prices.get(productID));
 		imageLoader.DisplayImage(imageURLS.get(productID), img);
+		actionBarTitle.setText(productNames.get(productID));
 
 	}
 
