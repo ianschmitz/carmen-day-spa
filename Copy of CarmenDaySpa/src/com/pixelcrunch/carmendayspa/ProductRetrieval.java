@@ -3,6 +3,7 @@ package com.pixelcrunch.carmendayspa;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.ListView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,16 +26,22 @@ public class ProductRetrieval {
 	private List<String> productDescriptions = new ArrayList<String>();
 	Context thisActivity;
 
-	public ProductRetrieval(Context calledActivity) throws IOException {
+	public ProductRetrieval(Context calledActivity)
+			throws IOException {
 		thisActivity = calledActivity;
+		new FetchURLContent().execute();
+	}
+
+	public ProductRetrieval() throws IOException {
 		try {
 			new FetchURLContent().execute().get();
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	public List<String> getProductNames() {
@@ -71,9 +78,8 @@ public class ProductRetrieval {
 
 		@Override
 		protected void onPreExecute() {
-			progressDialog = ProgressDialog.show( thisActivity,
-					"Loading Content", "please wait",
-					true);
+			progressDialog = ProgressDialog.show(thisActivity,
+					"Loading Content", "please wait", true);
 		};
 
 		protected Void doInBackground(Void... Void) {
@@ -99,13 +105,13 @@ public class ProductRetrieval {
 			}
 			return null;
 		}
-		
-	    @Override
-	    protected void onPostExecute(Void result)
-	    {
-	        super.onPostExecute(result);
-	        progressDialog.dismiss();
-	    };
-	    
+
+		@Override
+		protected void onPostExecute(Void result) {
+			super.onPostExecute(result);
+			progressDialog.dismiss();
+
+		};
+
 	}
 }

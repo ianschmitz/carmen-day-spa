@@ -27,9 +27,6 @@ public class ProductsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.products_layout);
 
-		// Creates the list where each item corresponds to a ListAdapter Item
-		list = (ListView) findViewById(R.id.list);
-
 		// Get the list of products and their information,
 		// store the info into string arrays used in creating
 		// our list of products.
@@ -43,10 +40,13 @@ public class ProductsActivity extends Activity {
 		List<String> productDescriptions = products.getProductDescriptions();
 		List<String> productPrices = products.getProductPrices();
 
+		// Creates the list where each item corresponds to a ListAdapter Item
+		list = (ListView) findViewById(R.id.list);
+
 		adapter = new ProductListAdapter(this, productImageURL,
 				productDescriptions, productPrices);
 		list.setAdapter(adapter);
-
+	
 		// Set up action bar Title
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.products);
@@ -78,7 +78,6 @@ public class ProductsActivity extends Activity {
 				startActivity(i);
 			}
 		});
-
 
 		/**
 		 * onItemClickListener for our ListView

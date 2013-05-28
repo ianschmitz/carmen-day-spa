@@ -1,7 +1,10 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -75,10 +78,8 @@ public class Home extends Activity {
 
 		// Listening Messages button click
 		btn_booking.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View view) {
-				// Launching News Feed Screen
 				Intent i = new Intent(getApplicationContext(),
 						BookingActivity.class);
 				startActivity(i);
@@ -90,10 +91,10 @@ public class Home extends Activity {
 
 			@Override
 			public void onClick(View view) {
-				// Launching News Feed Screen
-				Intent i = new Intent(getApplicationContext(),
-						DirectionsActivity.class);
-				startActivity(i);
+				// Launching Google Maps
+				String uri = String.format(Locale.ENGLISH, "geo:0,0?q=Carmen Day Spa & Zen for Men, 4197 Palamos Close, Victoria, BC, Canada");
+				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+				startActivity(intent);
 			}
 		});
 
