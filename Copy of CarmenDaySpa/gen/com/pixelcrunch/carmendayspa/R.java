@@ -219,17 +219,18 @@ containing a value of this type.
         public static final int ScrollView01=0x7f050008;
         public static final int ScrollView02=0x7f050016;
         public static final int aboutParagraph=0x7f050005;
-        public static final int action_settings=0x7f05002a;
+        public static final int action_settings=0x7f05002b;
         public static final int btnActionBarBack=0x7f050006;
         public static final int btnChangeDate=0x7f050011;
         public static final int btnChangeTime=0x7f05000e;
         public static final int btnSendFeedback=0x7f050015;
-        public static final int btn_about=0x7f050021;
-        public static final int btn_booking=0x7f05001e;
-        public static final int btn_contact=0x7f050020;
-        public static final int btn_directions=0x7f05001f;
-        public static final int btn_products=0x7f05001d;
-        public static final int btn_services=0x7f05001c;
+        public static final int btnSubmitFeedback=0x7f05001b;
+        public static final int btn_about=0x7f050022;
+        public static final int btn_booking=0x7f05001f;
+        public static final int btn_contact=0x7f050021;
+        public static final int btn_directions=0x7f050020;
+        public static final int btn_products=0x7f05001e;
+        public static final int btn_services=0x7f05001d;
         public static final int dpResult=0x7f050013;
         public static final int etAddCommentsBooking=0x7f050014;
         public static final int etBookingFirst=0x7f050009;
@@ -240,24 +241,24 @@ containing a value of this type.
         public static final int etFeedback=0x7f05001a;
         public static final int etPhoneBooking=0x7f05000c;
         public static final int etService=0x7f05000d;
-        public static final int home_root=0x7f05001b;
+        public static final int home_root=0x7f05001c;
         public static final int hybrid=0x7f050004;
-        public static final int image=0x7f050022;
-        public static final int imageButton=0x7f050029;
-        public static final int imgProduct=0x7f050026;
-        public static final int list=0x7f050025;
+        public static final int image=0x7f050023;
+        public static final int imageButton=0x7f05002a;
+        public static final int imgProduct=0x7f050027;
+        public static final int list=0x7f050026;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int ratingbar=0x7f050019;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
-        public static final int text=0x7f050023;
-        public static final int textPrice=0x7f050024;
+        public static final int text=0x7f050024;
+        public static final int textPrice=0x7f050025;
         public static final int timePicker1=0x7f050010;
         public static final int tvActionBarTitle=0x7f050007;
         public static final int tvDate=0x7f050012;
-        public static final int tvDescription=0x7f050027;
-        public static final int tvPrice=0x7f050028;
+        public static final int tvDescription=0x7f050028;
+        public static final int tvPrice=0x7f050029;
         public static final int tvTime=0x7f05000f;
     }
     public static final class layout {
@@ -378,6 +379,7 @@ containing a value of this type.
         public static final int products=0x7f06001c;
         public static final int requestedService=0x7f060028;
         public static final int services=0x7f060018;
+        public static final int submit=0x7f06002f;
         public static final int title_activity_single_product=0x7f06002d;
     }
     public static final class style {

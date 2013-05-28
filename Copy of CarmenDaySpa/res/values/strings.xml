@@ -32,5 +32,6 @@
     <string name="bookButton">Submit</string>
     <string name="title_activity_single_product">SingleProduct</string>
     <string name="product">Product</string>
+    <string name="submit">Submit</string>
 
 </resources>
