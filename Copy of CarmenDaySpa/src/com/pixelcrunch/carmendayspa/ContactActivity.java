@@ -71,7 +71,7 @@ public class ContactActivity extends Activity {
 		/**
 		 * Creating submit button instance
 		 * */
-		// Dashboard Services button
+		
 		Button btn_feedback = (Button) findViewById(R.id.btnSubmitFeedback);
 		
 		

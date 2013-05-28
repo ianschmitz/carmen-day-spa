@@ -90,9 +90,9 @@ int id ScrollView02 0x7f050016
 int id aboutParagraph 0x7f050005
 int id action_settings 0x7f05002b
 int id btnActionBarBack 0x7f050006
+int id btnBook 0x7f050015
 int id btnChangeDate 0x7f050011
 int id btnChangeTime 0x7f05000e
-int id btnSendFeedback 0x7f050015
 int id btnSubmitFeedback 0x7f05001b
 int id btn_about 0x7f050022
 int id btn_booking 0x7f05001f

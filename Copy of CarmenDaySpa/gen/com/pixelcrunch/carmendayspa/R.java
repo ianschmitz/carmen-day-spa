@@ -221,9 +221,9 @@ containing a value of this type.
         public static final int aboutParagraph=0x7f050005;
         public static final int action_settings=0x7f05002b;
         public static final int btnActionBarBack=0x7f050006;
+        public static final int btnBook=0x7f050015;
         public static final int btnChangeDate=0x7f050011;
         public static final int btnChangeTime=0x7f05000e;
-        public static final int btnSendFeedback=0x7f050015;
         public static final int btnSubmitFeedback=0x7f05001b;
         public static final int btn_about=0x7f050022;
         public static final int btn_booking=0x7f05001f;
