@@ -34,10 +34,29 @@
             android:padding="15dip"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#42526c"/>
+
+    <Spinner
+        android:id="@+id/spinQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/quantity" />
+
+    <TextView
+        android:id="@+id/tvOutOfStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/out_of_stock"
+        android:textColor="#ff0000"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
     <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton" android:layout_gravity="center" android:background="@drawable/cart"
-            />
+        android:id="@+id/btnCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/cart" />
 
 </LinearLayout>

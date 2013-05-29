@@ -33,5 +33,7 @@
     <string name="title_activity_single_product">SingleProduct</string>
     <string name="product">Product</string>
     <string name="submit">Submit</string>
+    <string name="quantity">Select Quantity</string>
+    <string name="out_of_stock">Out Of Stock\nPlease check back soon</string>
 
 </resources>

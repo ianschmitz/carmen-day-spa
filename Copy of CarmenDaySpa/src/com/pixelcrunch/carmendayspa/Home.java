@@ -26,7 +26,19 @@ public class Home extends Activity {
 
 		Button actionBarBack = (Button) findViewById(R.id.btnActionBarBack);
 		actionBarBack.setVisibility(View.GONE);
+		
+		Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
+		actionBarCart.setOnClickListener(new View.OnClickListener() {
 
+			@Override
+			public void onClick(View view) {
+				
+				Intent i = new Intent(getApplicationContext(),
+						CartActivity.class);
+				startActivity(i);
+			}
+		});
+		
 		/**
 		 * Creating all buttons instances
 		 * */
