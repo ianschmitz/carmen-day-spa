@@ -31,7 +31,7 @@ public class ProductsActivity extends Activity {
 		// store the info into string arrays used in creating
 		// our list of products.
 		try {
-			products = new ProductRetrieval(ProductsActivity.this);
+			products = new ProductRetrieval();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

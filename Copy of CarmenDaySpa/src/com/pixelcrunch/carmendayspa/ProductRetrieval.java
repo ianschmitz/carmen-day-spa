@@ -26,12 +26,6 @@ public class ProductRetrieval {
 	private List<String> productDescriptions = new ArrayList<String>();
 	Context thisActivity;
 
-	public ProductRetrieval(Context calledActivity)
-			throws IOException {
-		thisActivity = calledActivity;
-		new FetchURLContent().execute();
-	}
-
 	public ProductRetrieval() throws IOException {
 		try {
 			new FetchURLContent().execute().get();
@@ -74,13 +68,6 @@ public class ProductRetrieval {
 	}
 
 	private class FetchURLContent extends AsyncTask<Void, Void, Void> {
-		ProgressDialog progressDialog;
-
-		@Override
-		protected void onPreExecute() {
-			progressDialog = ProgressDialog.show(thisActivity,
-					"Loading Content", "please wait", true);
-		};
 
 		protected Void doInBackground(Void... Void) {
 			String out = null;
@@ -105,13 +92,6 @@ public class ProductRetrieval {
 			}
 			return null;
 		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			super.onPostExecute(result);
-			progressDialog.dismiss();
-
-		};
 
 	}
 }

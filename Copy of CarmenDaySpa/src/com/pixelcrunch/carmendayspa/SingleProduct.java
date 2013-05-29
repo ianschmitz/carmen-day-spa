@@ -1,7 +1,9 @@
 package com.pixelcrunch.carmendayspa;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -37,7 +39,7 @@ public class SingleProduct extends Activity {
 
 		// Get our list of products
 		try {
-			products = new ProductRetrieval(SingleProduct.this);
+			products = new ProductRetrieval();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
