@@ -56,6 +56,69 @@ public class BookingActivity extends Activity {
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.bookingTitle);
+		
+		/**
+		 * Creating submit button instance
+		 * */
+		
+		Button btn_booking = (Button) findViewById(R.id.btnBook);
+		
+		
+		// Set on click for feedback button, launching e-mail service
+		btn_booking.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View view) {
+				
+				// Pull info from form fields
+				EditText commentsField = (EditText)findViewById(R.id.etAddCommentsBooking);
+				String strComments = commentsField.getText().toString();
+				
+				EditText firstName = (EditText)findViewById(R.id.etBookingFirst);
+				String strFirstName = firstName.getText().toString();
+				
+				EditText lastName = (EditText)findViewById(R.id.etBookingLast);
+				String strLastName = lastName.getText().toString();
+				
+				EditText email = (EditText)findViewById(R.id.etEmailBooking);
+				String strEmail = email.getText().toString();
+				
+				EditText phone = (EditText)findViewById(R.id.etPhoneBooking);
+				String strPhone = phone.getText().toString();
+				
+				EditText service = (EditText)findViewById(R.id.etService);
+				String strService = service.getText().toString();
+				
+				TextView date = (TextView)findViewById(R.id.tvDate);
+				String strDate = date.getText().toString();
+				
+				TextView time = (TextView)findViewById(R.id.tvTime);
+				String strTime = time.getText().toString();
+				
+				String messageBody = "Date: " + strDate +
+								     "\n\n" + "Time: " + strTime +
+								     "\n\n" + "Service Requested: " + strService +
+								     "\n\n" + "First Name: " + strFirstName +
+								     "\n\n" + "Last Name: " + strLastName +
+								     "\n\n" + "Email: " + strEmail +
+								     "\n\n" + "Phone: " + strPhone +
+								     "\n\n" + "Additional Comments: " + strComments;
+				
+				String subjectString;
+				subjectString = "Customer Booking Form";			
+				
+				// Launching email
+				Uri uri = Uri.parse("mailto:ryanfrrll4@gmail.com");
+
+				Intent bookingEmail = new Intent(Intent.ACTION_SENDTO, uri);          
+				                         
+				bookingEmail.putExtra(Intent.EXTRA_SUBJECT, subjectString);
+				               
+				bookingEmail.putExtra(Intent.EXTRA_TEXT, messageBody);
+
+				startActivity(bookingEmail);
+			}
+		}); 
 
 		/**
 		 * Clicking either the back button or the title on the action bar will
@@ -181,9 +244,10 @@ public class BookingActivity extends Activity {
 
 		}
 		return null;
+	 
 	}
-
-	private TimePickerDialog.OnTimeSetListener timePickerListener = new TimePickerDialog.OnTimeSetListener() {
+	
+	TimePickerDialog.OnTimeSetListener timePickerListener = new TimePickerDialog.OnTimeSetListener() {
 		@Override
 		public void onTimeSet(TimePicker view, int selectedHour,
 				int selectedMinute) {
@@ -201,62 +265,6 @@ public class BookingActivity extends Activity {
 		}
 	};
 	
-	/**
-	 * Creating submit button instance
-	 * */
-	
-	Button btn_booking = (Button) findViewById(R.id.btnBook);
-	
-	
-	// Set on click for feedback button, launching e-mail service
-	btn_booking.setOnClickListener(new View.OnClickListener() {
-
-		@Override
-		public void onClick(View view) {
-			
-			// Pull info from form fields
-			EditText feedbackField = (EditText)findViewById(R.id.etFeedback);
-			String strFeedback = feedbackField.getText().toString();
-			
-			EditText firstName = (EditText)findViewById(R.id.etBookingFirst);
-			String strFirstName = firstName.getText().toString();
-			
-			EditText lastName = (EditText)findViewById(R.id.etBookingLast);
-			String strLastName = lastName.getText().toString();
-			
-			EditText email = (EditText)findViewById(R.id.etEmailBooking);
-			String strEmail = email.getText().toString();
-			
-			EditText phone = (EditText)findViewById(R.id.etPhoneBooking);
-			String strPhone = phone.getText().toString();
-			
-			EditText service = (EditText)findViewById(R.id.etService);
-			String strDate = date.getText().toString();
-			
-			TextView date = (TextView)findViewById(R.id.tvDate);
-			String strDate = date.getText().toString();
-			
-			TextView time = (TextView)findViewById(R.id.tvTime);
-			String strDate = date.getText().toString();
-			
-			String messageBody = "Date: " + feedbackField.getText().toString() + "\n" + "\n" +
-			firstName.getText().toString() + " " + lastName.getText().toString();			
-			
-			String subjectString;
-			subjectString = "Customer Booking Form";			
-			
-			// Launching email
-			Uri uri = Uri.parse("mailto:ryanfrrll4@gmail.com");
-
-			Intent bookingEmail = new Intent(Intent.ACTION_SENDTO, uri);          
-			                         
-			bookingEmail.putExtra(Intent.EXTRA_SUBJECT, subjectString);
-			               
-			bookingEmail.putExtra(Intent.EXTRA_TEXT, messageBody);
-
-			startActivity(bookingEmail);
-		}
-	}); }
 
 	private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
@@ -286,5 +294,8 @@ public class BookingActivity extends Activity {
 			return "0" + String.valueOf(c);
 	}
 	
-	
+
 }
+	
+	
+
