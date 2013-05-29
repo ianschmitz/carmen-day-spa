@@ -218,8 +218,8 @@ containing a value of this type.
     public static final class id {
         public static final int ScrollView01=0x7f050009;
         public static final int ScrollView02=0x7f050035;
-        public static final int aboutParagraph=0x7f050005;
         public static final int action_settings=0x7f050056;
+        public static final int bodyParagraph=0x7f050005;
         public static final int btnActionBarBack=0x7f050006;
         public static final int btnActionBarCart=0x7f050008;
         public static final int btnBody=0x7f050046;
@@ -425,6 +425,7 @@ containing a value of this type.
         public static final int quantity=0x7f060030;
         public static final int requestedService=0x7f060028;
         public static final int services=0x7f060018;
+        public static final int servicesBody=0x7f060032;
         public static final int submit=0x7f06002f;
         public static final int title_activity_single_product=0x7f06002d;
     }

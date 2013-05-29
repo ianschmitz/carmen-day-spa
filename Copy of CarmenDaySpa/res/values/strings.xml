@@ -15,8 +15,7 @@
         services and products. We offer a full range of spa services to help you look and feel better!\n\nCarmen is a
         licensed esthetician with twenty-two years of experience. Her success is based on providing the highest quality
         services and professional skin care products.\n\nWe are pleased to offer only the highest quality products
-        including Dr. Renaud, NK Brown, Gehwol, Dr. Biodroga, OPI and Footlogix.
-    </string>
+        including Dr. Renaud, NK Brown, Gehwol, Dr. Biodroga, OPI and Footlogix.</string>
     <string name="btnMore">More</string>
     <string name="contactTitle">Contact Carmen</string>
     <string name="contactFirstName">First Name</string>
@@ -35,5 +34,6 @@
     <string name="submit">Submit</string>
     <string name="quantity">Select Quantity</string>
     <string name="out_of_stock">Out Of Stock\nPlease check back soon</string>
+    <string name="servicesBody">Back Facial $90\nBody wraps $90\nAroma Body Wrap $90\nMilk and Honey Bodywrap $90\nAnti-Cellulite Wrap $90\nDetoxifying Celulite Treatment $90\nSpa Body Polish $90\nReflexology $49</string>
 
 </resources>

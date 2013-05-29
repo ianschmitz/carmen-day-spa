@@ -87,8 +87,8 @@ int drawable places_selected 0x7f020039
 int drawable stub 0x7f02003a
 int id ScrollView01 0x7f050009
 int id ScrollView02 0x7f050035
-int id aboutParagraph 0x7f050005
 int id action_settings 0x7f050056
+int id bodyParagraph 0x7f050005
 int id btnActionBarBack 0x7f050006
 int id btnActionBarCart 0x7f050008
 int id btnBody 0x7f050046
@@ -234,6 +234,7 @@ int string products 0x7f06001c
 int string quantity 0x7f060030
 int string requestedService 0x7f060028
 int string services 0x7f060018
+int string servicesBody 0x7f060032
 int string submit 0x7f06002f
 int string title_activity_single_product 0x7f06002d
 int style ActionBarCompat 0x7f080000

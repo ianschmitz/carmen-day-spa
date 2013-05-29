@@ -49,7 +49,7 @@ public class AboutActivity extends Activity {
             }
         });
 
-        TextView textView = (TextView) findViewById(R.id.aboutParagraph);
+        TextView textView = (TextView) findViewById(R.id.bodyParagraph);
         Typeface typeFace = Typeface.createFromAsset(getAssets(),
                 "fonts/Chantelli_Antiqua.ttf");
         textView.setTypeface(typeFace);

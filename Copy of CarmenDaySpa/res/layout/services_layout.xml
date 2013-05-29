@@ -29,12 +29,12 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/aboutParagraph"
+                android:id="@+id/bodyParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="left"
                 android:padding="15dip"
-                android:text="@string/aboutCarmen"
+                android:text="@string/servicesBody"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#42526c" />
         </LinearLayout>
@@ -55,7 +55,7 @@
                     android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/aboutParagraph"
+                android:id="@+id/bodyParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -81,7 +81,7 @@
                     android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/aboutParagraph"
+                android:id="@+id/bodyParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -107,7 +107,7 @@
                     android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/aboutParagraph"
+                android:id="@+id/bodyParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -133,7 +133,7 @@
                    android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/aboutParagraph"
+                android:id="@+id/bodyParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
