@@ -1,9 +1,9 @@
 package com.pixelcrunch.carmendayspa;
 
-import android.content.Context;
-
 import java.io.File;
 import java.net.URLEncoder;
+
+import android.content.Context;
 
 public class ProductFileCache {
 

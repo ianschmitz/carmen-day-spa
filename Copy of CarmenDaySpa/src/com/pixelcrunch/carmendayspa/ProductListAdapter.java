@@ -1,5 +1,7 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.List;
 
 public class ProductListAdapter extends BaseAdapter {
 

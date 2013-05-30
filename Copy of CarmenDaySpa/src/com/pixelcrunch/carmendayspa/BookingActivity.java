@@ -1,5 +1,7 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -14,8 +16,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
-import java.util.Calendar;
 
 public class BookingActivity extends Activity {
 	/**
