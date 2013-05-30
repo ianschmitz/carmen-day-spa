@@ -23,8 +23,8 @@
             android:background="@drawable/btn_generic"
             android:height="@dimen/Button_Height"
             android:text="@string/servicesBodyTitle"
-            android:textColor="@color/Button_Font" 
-            android:textSize="@dimen/Button_Font_Size"/>
+            android:textColor="@color/Button_Font"
+            android:textSize="@dimen/Button_Font_Size" />
 
         <LinearLayout
             android:id="@+id/panelBody"
@@ -37,8 +37,10 @@
                 android:id="@+id/bodyParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fadeScrollbars="false"
                 android:gravity="left"
                 android:padding="15dip"
+                android:scrollbars="vertical"
                 android:text="@string/servicesBody"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#42526c" />
@@ -54,7 +56,7 @@
             android:background="@drawable/btn_generic"
             android:height="@dimen/Button_Height"
             android:text="@string/servicesFaceTitle"
-            android:textColor="@color/Button_Font" 
+            android:textColor="@color/Button_Font"
             android:textSize="@dimen/Button_Font_Size" />
 
         <LinearLayout
@@ -65,12 +67,14 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/bodyParagraph"
+                android:id="@+id/faceParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:fadeScrollbars="false"
+                android:gravity="left"
                 android:padding="15dip"
-                android:text="@string/aboutCarmen"
+                android:scrollbars="vertical"
+                android:text="@string/servicesFace"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#42526c" />
         </LinearLayout>
@@ -85,7 +89,7 @@
             android:background="@drawable/btn_generic"
             android:height="@dimen/Button_Height"
             android:text="@string/servicesHandsFeetTitle"
-            android:textColor="@color/Button_Font" 
+            android:textColor="@color/Button_Font"
             android:textSize="@dimen/Button_Font_Size" />
 
         <LinearLayout
@@ -96,12 +100,14 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/bodyParagraph"
+                android:id="@+id/handsFeetParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:fadeScrollbars="false"
+                android:gravity="left"
                 android:padding="15dip"
-                android:text="@string/aboutCarmen"
+                android:scrollbars="vertical"
+                android:text="@string/servicesHandsFeet"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#42526c" />
         </LinearLayout>
@@ -116,7 +122,7 @@
             android:background="@drawable/btn_generic"
             android:height="@dimen/Button_Height"
             android:text="@string/servicesHairRemovalTitle"
-            android:textColor="@color/Button_Font" 
+            android:textColor="@color/Button_Font"
             android:textSize="@dimen/Button_Font_Size" />
 
         <LinearLayout
@@ -127,12 +133,14 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/bodyParagraph"
+                android:id="@+id/hairRemovalParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:fadeScrollbars="false"
+                android:gravity="left"
                 android:padding="15dip"
-                android:text="@string/aboutCarmen"
+                android:scrollbars="vertical"
+                android:text="@string/servicesHairRemoval"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#42526c" />
         </LinearLayout>
@@ -147,7 +155,7 @@
             android:background="@drawable/btn_generic"
             android:height="@dimen/Button_Height"
             android:text="@string/servicesSpecialTouchesTitle"
-            android:textColor="@color/Button_Font" 
+            android:textColor="@color/Button_Font"
             android:textSize="@dimen/Button_Font_Size" />
 
         <LinearLayout
@@ -158,12 +166,14 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/bodyParagraph"
+                android:id="@+id/specialTouchesParagraph"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:fadeScrollbars="false"
+                android:gravity="left"
                 android:padding="15dip"
-                android:text="@string/aboutCarmen"
+                android:scrollbars="vertical"
+                android:text="@string/servicesSpecialTouches"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#42526c" />
         </LinearLayout>

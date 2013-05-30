@@ -29,8 +29,6 @@
 <color name="Button_Type_7_Light">#9ed2fe</color>
 <color name="Button_Type_7_Text">#ffffff</color>
 <color name="Button_Font">#ecca4a</color>
-<color name="Indicator_Selected_Color">#fcf4bd</color>
-<color name="Indicator_Unselected_Color">#e4a458</color>
 <color name="Display_Backround">#95beb2</color>
 <color name="Focused_Stroke">#fc4564</color>
 <color name="Frame_Background">#404040</color>

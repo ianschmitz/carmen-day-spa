@@ -35,10 +35,14 @@
     <string name="quantity">Select Quantity</string>
     <string name="out_of_stock">Out Of Stock\nPlease check back soon</string>
     <string name="servicesBody">Back Facial $90\nBody wraps $90\nAroma Body Wrap $90\nMilk &amp; Honey Bodywrap $90\nAnti-Cellulite Wrap $90\nDetoxifying Celulite Treatment $90\nSpa Body Polish $90\nReflexology $49</string>
-	<string name="servicesBodyTitle">For Your Body</string>
-	<string name="servicesFaceTitle">For Your Face</string>
-	<string name="servicesHandsFeetTitle">For Your Hands &amp; Feet</string>
-	<string name="servicesHairRemovalTitle">Hair Removal</string>
-	<string name="servicesSpecialTouchesTitle">Special Touches</string>
-    
+    <string name="servicesBodyTitle">For Your Body</string>
+    <string name="servicesFace">Carmen’s Signature Facial $89 – 75 min\nDeluxe Facial $99 – 75 min\nTeen Facial $75 – 60 min\nGycolic Acid Peel $45 – 30 min</string>
+    <string name="servicesFaceTitle">For Your Face</string>
+    <string name="servicesHandsFeet">Spa Manicure &amp; Arm Massage $32\nSpa Pedicure &amp; Leg Massage $42\nSpa Manicure &amp; Pedicure $65\nFrench tip Manicure $37\nParaffin treatment Add $20</string>
+    <string name="servicesHandsFeetTitle">For Your Hands &amp; Feet</string>
+    <string name="servicesHairRemoval">Brazilian$45\nadd Half Leg – $$$\nadd Full Leg – $$$\nBikini or Underarm – $20\n\nadd Half Leg – $$$\nadd Full Leg – $$$\nHalf leg – $28\n\nFull leg wax – $50\nFull Arms – $25\nUnderarms – $25\nBrows, Lips &amp; Chin – $25\nBrows (Wax or Tweeze) – $15\nUpper lip or chin – $12\nFacial Sides – $20</string>
+    <string name="servicesHairRemovalTitle">Hair Removal</string>
+    <string name="servicesSpecialTouches">Eyelash Extension – $60\nBeautifying Eye Treatment – $25\nEar Piercing – $15\nEar Candling – $45\nDay or Evening makeup – $40\nBridal Makeup – $50\nBody Bronzing Air Mist Tanning – Face and Neck – $35\nBody Bronzing Air Mist Tanning – Full Body – $50</string>
+    <string name="servicesSpecialTouchesTitle">Special Touches</string>
+
 </resources>

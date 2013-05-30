@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,10 +52,7 @@ public class ServicesActivity extends Activity {
 		/**
 		 * Controls the accordion buttons.
 		 */
-        TextView textView = (TextView) findViewById(R.id.bodyParagraph);
-        Typeface typeFace = Typeface.createFromAsset(getAssets(),
-                "fonts/Chantelli_Antiqua.ttf");
-        textView.setTypeface(typeFace);
+
 		
 		Button btnBody = (Button) findViewById(R.id.btnBody);
 		Button btnFace = (Button) findViewById(R.id.btnFace);
@@ -62,20 +60,39 @@ public class ServicesActivity extends Activity {
 		Button btnHairRemoval = (Button) findViewById(R.id.btnHairRemoval);
 		Button btnSpecialTouches = (Button) findViewById(R.id.btnSpecialTouches);
 
+		// Font to use for all
+        Typeface typeFace = Typeface.createFromAsset(getAssets(),
+                "fonts/Chantelli_Antiqua.ttf");
+		
 		View panelBody = findViewById(R.id.panelBody);
 		panelBody.setVisibility(View.GONE);
-
+        TextView bodyText = (TextView) findViewById(R.id.bodyParagraph);
+        bodyText.setTypeface(typeFace);
+		bodyText.setMovementMethod(new ScrollingMovementMethod());
+		
 		View panelFace = findViewById(R.id.panelFace);
 		panelFace.setVisibility(View.GONE);
+		TextView faceText = (TextView) findViewById(R.id.faceParagraph);
+		faceText.setTypeface(typeFace);
+		faceText.setMovementMethod(new ScrollingMovementMethod());
 
 		View panelHandsFeet = findViewById(R.id.panelHandsFeet);
 		panelHandsFeet.setVisibility(View.GONE);
+		TextView handsFeetText = (TextView) findViewById(R.id.handsFeetParagraph);
+		handsFeetText.setTypeface(typeFace);
+		handsFeetText.setMovementMethod(new ScrollingMovementMethod());
 
 		View panelHairRemoval = findViewById(R.id.panelHairRemoval);
 		panelHairRemoval.setVisibility(View.GONE);
+		TextView hairRemovalText = (TextView) findViewById(R.id.hairRemovalParagraph);
+		hairRemovalText.setTypeface(typeFace);
+		hairRemovalText.setMovementMethod(new ScrollingMovementMethod());
 
 		View panelSpecialTouches = findViewById(R.id.panelSpecialTouches);
 		panelSpecialTouches.setVisibility(View.GONE);
+		TextView specialTouchesText = (TextView) findViewById(R.id.specialTouchesParagraph);
+		specialTouchesText.setTypeface(typeFace);
+		specialTouchesText.setMovementMethod(new ScrollingMovementMethod());
 
 		btnBody.setOnClickListener(new View.OnClickListener() {
 			@Override

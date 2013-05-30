@@ -156,19 +156,17 @@ containing a value of this type.
         public static final int Button_Type_7_Dark=0x7f040021;
         public static final int Button_Type_7_Light=0x7f040022;
         public static final int Button_Type_7_Text=0x7f040023;
-        public static final int Display_Backround=0x7f040027;
-        public static final int Focused_Stroke=0x7f040028;
-        public static final int Frame_Background=0x7f040029;
-        public static final int Indicator_Selected_Color=0x7f040025;
-        public static final int Indicator_Unselected_Color=0x7f040026;
-        public static final int Normal_Stroke=0x7f04002a;
-        public static final int Pressed_Stroke=0x7f04002b;
-        public static final int Printout_Background=0x7f04002c;
-        public static final int Printout_Light=0x7f04002d;
-        public static final int Printout_Stroke=0x7f04002e;
-        public static final int Printout_Text=0x7f04002f;
-        public static final int Text_Active_Indicator=0x7f040030;
-        public static final int Text_Inactive_Indicator=0x7f040031;
+        public static final int Display_Backround=0x7f040025;
+        public static final int Focused_Stroke=0x7f040026;
+        public static final int Frame_Background=0x7f040027;
+        public static final int Normal_Stroke=0x7f040028;
+        public static final int Pressed_Stroke=0x7f040029;
+        public static final int Printout_Background=0x7f04002a;
+        public static final int Printout_Light=0x7f04002b;
+        public static final int Printout_Stroke=0x7f04002c;
+        public static final int Printout_Text=0x7f04002d;
+        public static final int Text_Active_Indicator=0x7f04002e;
+        public static final int Text_Inactive_Indicator=0x7f04002f;
         public static final int common_action_bar_splitter=0x7f040009;
         /**  Sign-in Button Colors 
          */
@@ -181,8 +179,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f040006;
         public static final int common_signin_btn_light_text_focused=0x7f040007;
         public static final int common_signin_btn_light_text_pressed=0x7f040005;
-        public static final int common_signin_btn_text_dark=0x7f040032;
-        public static final int common_signin_btn_text_light=0x7f040033;
+        public static final int common_signin_btn_text_dark=0x7f040030;
+        public static final int common_signin_btn_text_light=0x7f040031;
     }
     public static final class dimen {
         /**  For services page button stuff 
@@ -269,19 +267,19 @@ containing a value of this type.
     public static final class id {
         public static final int ScrollView01=0x7f050009;
         public static final int ScrollView02=0x7f050035;
-        public static final int action_settings=0x7f050056;
+        public static final int action_settings=0x7f05005a;
         public static final int bodyParagraph=0x7f050005;
         public static final int btnActionBarBack=0x7f050006;
         public static final int btnActionBarCart=0x7f050008;
         public static final int btnBody=0x7f050046;
         public static final int btnBook=0x7f050016;
-        public static final int btnCart=0x7f050055;
+        public static final int btnCart=0x7f050059;
         public static final int btnChangeDate=0x7f050012;
         public static final int btnChangeTime=0x7f05000f;
         public static final int btnCheckOut=0x7f050034;
         public static final int btnFace=0x7f050048;
-        public static final int btnHairRemoval=0x7f05004c;
-        public static final int btnHandsFeet=0x7f05004a;
+        public static final int btnHairRemoval=0x7f05004e;
+        public static final int btnHandsFeet=0x7f05004b;
         public static final int btnItem1=0x7f050019;
         public static final int btnItem2=0x7f05001c;
         public static final int btnItem3=0x7f05001f;
@@ -292,7 +290,7 @@ containing a value of this type.
         public static final int btnItem8=0x7f05002e;
         public static final int btnItem9=0x7f050031;
         public static final int btnRemoveAll=0x7f050033;
-        public static final int btnSpecialTouches=0x7f05004e;
+        public static final int btnSpecialTouches=0x7f050051;
         public static final int btnSubmitFeedback=0x7f05003a;
         public static final int btn_about=0x7f050041;
         public static final int btn_booking=0x7f05003e;
@@ -311,10 +309,13 @@ containing a value of this type.
         public static final int etFeedback=0x7f050039;
         public static final int etPhoneBooking=0x7f05000d;
         public static final int etService=0x7f05000e;
+        public static final int faceParagraph=0x7f05004a;
+        public static final int hairRemovalParagraph=0x7f050050;
+        public static final int handsFeetParagraph=0x7f05004d;
         public static final int home_root=0x7f05003b;
         public static final int hybrid=0x7f050004;
         public static final int image=0x7f050042;
-        public static final int imgProduct=0x7f050050;
+        public static final int imgProduct=0x7f050054;
         public static final int item1=0x7f050017;
         public static final int item2=0x7f05001a;
         public static final int item3=0x7f05001d;
@@ -329,19 +330,20 @@ containing a value of this type.
         public static final int normal=0x7f050001;
         public static final int panelBody=0x7f050047;
         public static final int panelFace=0x7f050049;
-        public static final int panelHairRemoval=0x7f05004d;
-        public static final int panelHandsFeet=0x7f05004b;
-        public static final int panelSpecialTouches=0x7f05004f;
+        public static final int panelHairRemoval=0x7f05004f;
+        public static final int panelHandsFeet=0x7f05004c;
+        public static final int panelSpecialTouches=0x7f050052;
         public static final int ratingbar=0x7f050038;
         public static final int satellite=0x7f050002;
-        public static final int spinQuantity=0x7f050053;
+        public static final int specialTouchesParagraph=0x7f050053;
+        public static final int spinQuantity=0x7f050057;
         public static final int terrain=0x7f050003;
         public static final int text=0x7f050043;
         public static final int textPrice=0x7f050044;
         public static final int timePicker1=0x7f050011;
         public static final int tvActionBarTitle=0x7f050007;
         public static final int tvDate=0x7f050013;
-        public static final int tvDescription=0x7f050051;
+        public static final int tvDescription=0x7f050055;
         public static final int tvItem1=0x7f050018;
         public static final int tvItem2=0x7f05001b;
         public static final int tvItem3=0x7f05001e;
@@ -351,8 +353,8 @@ containing a value of this type.
         public static final int tvItem7=0x7f05002a;
         public static final int tvItem8=0x7f05002d;
         public static final int tvItem9=0x7f050030;
-        public static final int tvOutOfStock=0x7f050054;
-        public static final int tvPrice=0x7f050052;
+        public static final int tvOutOfStock=0x7f050058;
+        public static final int tvPrice=0x7f050056;
         public static final int tvTime=0x7f050010;
     }
     public static final class layout {
@@ -478,10 +480,14 @@ containing a value of this type.
         public static final int services=0x7f060018;
         public static final int servicesBody=0x7f060032;
         public static final int servicesBodyTitle=0x7f060033;
-        public static final int servicesFaceTitle=0x7f060034;
-        public static final int servicesHairRemovalTitle=0x7f060036;
-        public static final int servicesHandsFeetTitle=0x7f060035;
-        public static final int servicesSpecialTouchesTitle=0x7f060037;
+        public static final int servicesFace=0x7f060034;
+        public static final int servicesFaceTitle=0x7f060035;
+        public static final int servicesHairRemoval=0x7f060038;
+        public static final int servicesHairRemovalTitle=0x7f060039;
+        public static final int servicesHandsFeet=0x7f060036;
+        public static final int servicesHandsFeetTitle=0x7f060037;
+        public static final int servicesSpecialTouches=0x7f06003a;
+        public static final int servicesSpecialTouchesTitle=0x7f06003b;
         public static final int submit=0x7f06002f;
         public static final int title_activity_single_product=0x7f06002d;
     }
