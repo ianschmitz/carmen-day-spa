@@ -4,4 +4,15 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!-- For services page button stuff -->
+    <dimen name="Button_Corner">6dp</dimen>
+    <dimen name="Button_Margin">3dp</dimen>
+    <dimen name="Button_Height">42dp</dimen>
+    <dimen name="Button_Padding">8dp</dimen>
+    <dimen name="Button_Font_Size">18dp</dimen>
+    <dimen name="Focused_Stroke">4dp</dimen>
+    <dimen name="Normal_Stroke">1dp</dimen>
+    <dimen name="Pressed_Stroke">4dp</dimen>
+
+
 </resources>

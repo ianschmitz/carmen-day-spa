@@ -34,6 +34,11 @@
     <string name="submit">Submit</string>
     <string name="quantity">Select Quantity</string>
     <string name="out_of_stock">Out Of Stock\nPlease check back soon</string>
-    <string name="servicesBody">Back Facial $90\nBody wraps $90\nAroma Body Wrap $90\nMilk and Honey Bodywrap $90\nAnti-Cellulite Wrap $90\nDetoxifying Celulite Treatment $90\nSpa Body Polish $90\nReflexology $49</string>
-
+    <string name="servicesBody">Back Facial $90\nBody wraps $90\nAroma Body Wrap $90\nMilk &amp; Honey Bodywrap $90\nAnti-Cellulite Wrap $90\nDetoxifying Celulite Treatment $90\nSpa Body Polish $90\nReflexology $49</string>
+	<string name="servicesBodyTitle">For Your Body</string>
+	<string name="servicesFaceTitle">For Your Face</string>
+	<string name="servicesHandsFeetTitle">For Your Hands &amp; Feet</string>
+	<string name="servicesHairRemovalTitle">Hair Removal</string>
+	<string name="servicesSpecialTouchesTitle">Special Touches</string>
+    
 </resources>

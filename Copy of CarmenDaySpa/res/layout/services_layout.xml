@@ -11,21 +11,26 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="15dp" >
+        android:paddingTop="5dp" >
 
         <Button
             android:id="@+id/btnBody"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="For Your Body"
-            android:textColor="#FFFFFFFF" />
+            android:layout_marginLeft="@dimen/Button_Padding"
+            android:layout_marginRight="@dimen/Button_Padding"
+            android:layout_marginTop="@dimen/Button_Padding"
+            android:background="@drawable/btn_generic"
+            android:height="@dimen/Button_Height"
+            android:text="@string/servicesBodyTitle"
+            android:textColor="@color/Button_Font" 
+            android:textSize="@dimen/Button_Font_Size"/>
 
         <LinearLayout
             android:id="@+id/panelBody"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FFFFFFFF"
             android:orientation="vertical" >
 
             <TextView
@@ -43,16 +48,21 @@
             android:id="@+id/btnFace"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="For Your Face"
-            android:textColor="#FFFFFFFF" />
+            android:layout_marginLeft="@dimen/Button_Padding"
+            android:layout_marginRight="@dimen/Button_Padding"
+            android:layout_marginTop="@dimen/Button_Padding"
+            android:background="@drawable/btn_generic"
+            android:height="@dimen/Button_Height"
+            android:text="@string/servicesFaceTitle"
+            android:textColor="@color/Button_Font" 
+            android:textSize="@dimen/Button_Font_Size" />
 
-                <LinearLayout
-                    android:id="@+id/panelFace"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#FFFFFFFF"
-                    android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/panelFace"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/bodyParagraph"
@@ -69,16 +79,21 @@
             android:id="@+id/btnHandsFeet"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="For Your Hands &amp; Feet"
-            android:textColor="#FFFFFFFF" />
+            android:layout_marginLeft="@dimen/Button_Padding"
+            android:layout_marginRight="@dimen/Button_Padding"
+            android:layout_marginTop="@dimen/Button_Padding"
+            android:background="@drawable/btn_generic"
+            android:height="@dimen/Button_Height"
+            android:text="@string/servicesHandsFeetTitle"
+            android:textColor="@color/Button_Font" 
+            android:textSize="@dimen/Button_Font_Size" />
 
-                <LinearLayout
-                    android:id="@+id/panelHandsFeet"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#FFFFFFFF"
-                    android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/panelHandsFeet"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/bodyParagraph"
@@ -95,16 +110,21 @@
             android:id="@+id/btnHairRemoval"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Hair Removal"
-            android:textColor="#FFFFFFFF" />
+            android:layout_marginLeft="@dimen/Button_Padding"
+            android:layout_marginRight="@dimen/Button_Padding"
+            android:layout_marginTop="@dimen/Button_Padding"
+            android:background="@drawable/btn_generic"
+            android:height="@dimen/Button_Height"
+            android:text="@string/servicesHairRemovalTitle"
+            android:textColor="@color/Button_Font" 
+            android:textSize="@dimen/Button_Font_Size" />
 
-                <LinearLayout
-                    android:id="@+id/panelHairRemoval"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#FFFFFFFF"
-                    android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/panelHairRemoval"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/bodyParagraph"
@@ -121,16 +141,21 @@
             android:id="@+id/btnSpecialTouches"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Special Touches"
-            android:textColor="#FFFFFFFF" />
+            android:layout_marginLeft="@dimen/Button_Padding"
+            android:layout_marginRight="@dimen/Button_Padding"
+            android:layout_marginTop="@dimen/Button_Padding"
+            android:background="@drawable/btn_generic"
+            android:height="@dimen/Button_Height"
+            android:text="@string/servicesSpecialTouchesTitle"
+            android:textColor="@color/Button_Font" 
+            android:textSize="@dimen/Button_Font_Size" />
 
-               <LinearLayout
-                   android:id="@+id/panelSpecialTouches"
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:background="#FFFFFFFF"
-                   android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/panelSpecialTouches"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/bodyParagraph"
