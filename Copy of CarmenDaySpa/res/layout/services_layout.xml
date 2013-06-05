@@ -35,7 +35,7 @@
 
             <TextView
                 android:id="@+id/bodyParagraph"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fadeScrollbars="false"
                 android:gravity="left"
@@ -68,7 +68,7 @@
 
             <TextView
                 android:id="@+id/faceParagraph"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fadeScrollbars="false"
                 android:gravity="left"
@@ -101,7 +101,7 @@
 
             <TextView
                 android:id="@+id/handsFeetParagraph"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fadeScrollbars="false"
                 android:gravity="left"
@@ -134,7 +134,7 @@
 
             <TextView
                 android:id="@+id/hairRemovalParagraph"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fadeScrollbars="false"
                 android:gravity="left"
@@ -167,7 +167,7 @@
 
             <TextView
                 android:id="@+id/specialTouchesParagraph"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fadeScrollbars="false"
                 android:gravity="left"
