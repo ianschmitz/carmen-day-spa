@@ -52,21 +52,7 @@ public class ContactActivity extends Activity {
 			}
 		});
 
-		/**
-		 * Display Rating Update in a Toast
-		 */
 
-		final RatingBar ratingbar = (RatingBar) findViewById(R.id.ratingbar);
-		ratingbar.setStepSize((float) 1); //
-		ratingbar.setRating((float) 5); // set rating which u want to display
-
-		ratingbar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-			public void onRatingChanged(RatingBar ratingBar, float rating,
-					boolean fromUser) {
-				Toast.makeText(ContactActivity.this, "New Rating: " + rating,
-						Toast.LENGTH_SHORT).show();
-			}
-		});
 		
 		/**
 		 * Creating submit button instance
