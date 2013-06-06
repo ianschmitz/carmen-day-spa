@@ -319,7 +319,6 @@ public class BookingActivity extends Activity {
 		}
 
 		return false;
-
 	}
 
 }

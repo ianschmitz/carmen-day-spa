@@ -8,8 +8,10 @@ import java.util.Map;
 import android.R.bool;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -198,6 +200,50 @@ public class CartActivity extends Activity {
 				editor.commit(); // commit changes
 
 				CartActivity.this.finish();
+
+			}
+		});
+
+		btnCheckOut.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				String messageBody = "";
+
+				prefs = CartActivity.this.getSharedPreferences("carmen_cart",
+						Context.MODE_PRIVATE);
+				Map<String, ?> keys = prefs.getAll();
+				for (Map.Entry<String, ?> entry : keys.entrySet()) {
+					int productID = getSelectedProduct(entry.getKey());
+					String productString = "";
+					String prodName = productNames.get(productID);
+					String prodQuantity = String.valueOf(entry.getValue());
+					String prodPrice = prices.get(productID);
+
+					productString += prodName + " - " + prodQuantity + "@"
+							+ prodPrice;
+
+					messageBody += productString + "\n";
+				}
+
+				messageBody += "_______________________________\n";
+				messageBody += "subtotal: $" + subtotal;
+				messageBody += "\n_______________________________";
+				messageBody += "\nThank you for your order, your products will be ready for pick up!";
+
+				String subjectString;
+				subjectString = "Product Order";
+
+				// Launching email
+				Uri uri = Uri.parse("mailto:ryanfrrll4@gmail.com");
+
+				Intent bookingEmail = new Intent(Intent.ACTION_SENDTO, uri);
+
+				bookingEmail.putExtra(Intent.EXTRA_SUBJECT, subjectString);
+
+				bookingEmail.putExtra(Intent.EXTRA_TEXT, messageBody);
+
+				startActivity(bookingEmail);
 
 			}
 		});
