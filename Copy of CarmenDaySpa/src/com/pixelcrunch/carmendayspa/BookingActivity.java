@@ -1,12 +1,15 @@
 package com.pixelcrunch.carmendayspa;
 
 import java.util.Calendar;
+import java.util.Map;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +21,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class BookingActivity extends Activity {
-	/**
-	 * Called when the activity is first created.
-	 */
+	SharedPreferences prefs;
+	boolean isEmpty;
 
 	// TIMEPICKER VARIABLES
 	private TextView tvDisplayTime;
@@ -46,6 +48,22 @@ public class BookingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.booking_layout);
 
+		if (!isCartEmpty()) {
+			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
+			actionBarCart.setVisibility(View.VISIBLE);
+
+			actionBarCart.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View view) {
+
+					Intent i = new Intent(getApplicationContext(),
+							CartActivity.class);
+					startActivity(i);
+				}
+			});
+		}
+
 		// TIMEPICKER METHODS
 		setCurrentTimeOnView();
 		addListenerOnTimeButton();
@@ -56,69 +74,66 @@ public class BookingActivity extends Activity {
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.bookingTitle);
-		
+
 		/**
 		 * Creating submit button instance
 		 * */
-		
+
 		Button btn_booking = (Button) findViewById(R.id.btnBook);
-		
-		
+
 		// Set on click for feedback button, launching e-mail service
 		btn_booking.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
-				
+
 				// Pull info from form fields
-				EditText commentsField = (EditText)findViewById(R.id.etAddCommentsBooking);
+				EditText commentsField = (EditText) findViewById(R.id.etAddCommentsBooking);
 				String strComments = commentsField.getText().toString();
-				
-				EditText firstName = (EditText)findViewById(R.id.etBookingFirst);
+
+				EditText firstName = (EditText) findViewById(R.id.etBookingFirst);
 				String strFirstName = firstName.getText().toString();
-				
-				EditText lastName = (EditText)findViewById(R.id.etBookingLast);
+
+				EditText lastName = (EditText) findViewById(R.id.etBookingLast);
 				String strLastName = lastName.getText().toString();
-				
-				EditText email = (EditText)findViewById(R.id.etEmailBooking);
+
+				EditText email = (EditText) findViewById(R.id.etEmailBooking);
 				String strEmail = email.getText().toString();
-				
-				EditText phone = (EditText)findViewById(R.id.etPhoneBooking);
+
+				EditText phone = (EditText) findViewById(R.id.etPhoneBooking);
 				String strPhone = phone.getText().toString();
-				
-				EditText service = (EditText)findViewById(R.id.etService);
+
+				EditText service = (EditText) findViewById(R.id.etService);
 				String strService = service.getText().toString();
-				
-				TextView date = (TextView)findViewById(R.id.tvDate);
+
+				TextView date = (TextView) findViewById(R.id.tvDate);
 				String strDate = date.getText().toString();
-				
-				TextView time = (TextView)findViewById(R.id.tvTime);
+
+				TextView time = (TextView) findViewById(R.id.tvTime);
 				String strTime = time.getText().toString();
-				
-				String messageBody = "Date: " + strDate +
-								     "\n\n" + "Time: " + strTime +
-								     "\n\n" + "Service Requested: " + strService +
-								     "\n\n" + "First Name: " + strFirstName +
-								     "\n\n" + "Last Name: " + strLastName +
-								     "\n\n" + "Email: " + strEmail +
-								     "\n\n" + "Phone: " + strPhone +
-								     "\n\n" + "Additional Comments: " + strComments;
-				
+
+				String messageBody = "Date: " + strDate + "\n\n" + "Time: "
+						+ strTime + "\n\n" + "Service Requested: " + strService
+						+ "\n\n" + "First Name: " + strFirstName + "\n\n"
+						+ "Last Name: " + strLastName + "\n\n" + "Email: "
+						+ strEmail + "\n\n" + "Phone: " + strPhone + "\n\n"
+						+ "Additional Comments: " + strComments;
+
 				String subjectString;
-				subjectString = "Customer Booking Form";			
-				
+				subjectString = "Customer Booking Form";
+
 				// Launching email
 				Uri uri = Uri.parse("mailto:ryanfrrll4@gmail.com");
 
-				Intent bookingEmail = new Intent(Intent.ACTION_SENDTO, uri);          
-				                         
+				Intent bookingEmail = new Intent(Intent.ACTION_SENDTO, uri);
+
 				bookingEmail.putExtra(Intent.EXTRA_SUBJECT, subjectString);
-				               
+
 				bookingEmail.putExtra(Intent.EXTRA_TEXT, messageBody);
 
 				startActivity(bookingEmail);
 			}
-		}); 
+		});
 
 		/**
 		 * Clicking either the back button or the title on the action bar will
@@ -244,9 +259,9 @@ public class BookingActivity extends Activity {
 
 		}
 		return null;
-	 
+
 	}
-	
+
 	TimePickerDialog.OnTimeSetListener timePickerListener = new TimePickerDialog.OnTimeSetListener() {
 		@Override
 		public void onTimeSet(TimePicker view, int selectedHour,
@@ -264,7 +279,6 @@ public class BookingActivity extends Activity {
 
 		}
 	};
-	
 
 	private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
@@ -293,9 +307,19 @@ public class BookingActivity extends Activity {
 		else
 			return "0" + String.valueOf(c);
 	}
-	
+
+	public boolean isCartEmpty() {
+		prefs = this.getSharedPreferences("carmen_cart", Context.MODE_PRIVATE);
+		Map<String, ?> keys = prefs.getAll();
+
+		Map<String, ?> emptyCheck = prefs.getAll();
+
+		if (emptyCheck.size() == 0) {
+			return true;
+		}
+
+		return false;
+
+	}
 
 }
-	
-	
-

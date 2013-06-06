@@ -1,7 +1,11 @@
 package com.pixelcrunch.carmendayspa;
 
+import java.util.Map;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -10,13 +14,29 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ServicesActivity extends Activity {
-	/**
-	 * Called when the activity is first created.
-	 */
+	SharedPreferences prefs;
+	boolean isEmpty;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.services_layout);
+
+		if (!isCartEmpty()) {
+			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
+			actionBarCart.setVisibility(View.VISIBLE);
+
+			actionBarCart.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View view) {
+
+					Intent i = new Intent(getApplicationContext(),
+							CartActivity.class);
+					startActivity(i);
+				}
+			});
+		}
 
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.services);
@@ -53,7 +73,6 @@ public class ServicesActivity extends Activity {
 		 * Controls the accordion buttons.
 		 */
 
-		
 		Button btnBody = (Button) findViewById(R.id.btnBody);
 		Button btnFace = (Button) findViewById(R.id.btnFace);
 		Button btnHandsFeet = (Button) findViewById(R.id.btnHandsFeet);
@@ -61,15 +80,15 @@ public class ServicesActivity extends Activity {
 		Button btnSpecialTouches = (Button) findViewById(R.id.btnSpecialTouches);
 
 		// Font to use for all
-        Typeface typeFace = Typeface.createFromAsset(getAssets(),
-                "fonts/Chantelli_Antiqua.ttf");
-		
+		Typeface typeFace = Typeface.createFromAsset(getAssets(),
+				"fonts/Chantelli_Antiqua.ttf");
+
 		View panelBody = findViewById(R.id.panelBody);
 		panelBody.setVisibility(View.GONE);
-        TextView bodyText = (TextView) findViewById(R.id.bodyParagraph);
-        bodyText.setTypeface(typeFace);
+		TextView bodyText = (TextView) findViewById(R.id.bodyParagraph);
+		bodyText.setTypeface(typeFace);
 		bodyText.setMovementMethod(new ScrollingMovementMethod());
-		
+
 		View panelFace = findViewById(R.id.panelFace);
 		panelFace.setVisibility(View.GONE);
 		TextView faceText = (TextView) findViewById(R.id.faceParagraph);
@@ -203,6 +222,19 @@ public class ServicesActivity extends Activity {
 
 			}
 		});
+	}
+
+	public boolean isCartEmpty() {
+		prefs = this.getSharedPreferences("carmen_cart", Context.MODE_PRIVATE);
+		Map<String, ?> keys = prefs.getAll();
+
+		Map<String, ?> emptyCheck = prefs.getAll();
+
+		if (emptyCheck.size() == 0) {
+			return true;
+		}
+
+		return false;
 
 	}
 }

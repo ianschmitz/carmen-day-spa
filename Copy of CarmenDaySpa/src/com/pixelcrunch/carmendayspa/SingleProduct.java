@@ -3,9 +3,11 @@ package com.pixelcrunch.carmendayspa;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -40,10 +42,28 @@ public class SingleProduct extends Activity {
 	int productID;
 	int selectedQuant = 0;
 
+	boolean isEmpty;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.single_product_layout);
+
+		if (!isCartEmpty()) {
+			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
+			actionBarCart.setVisibility(View.VISIBLE);
+			actionBarCart.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View view) {
+
+					Intent i = new Intent(getApplicationContext(),
+							CartActivity.class);
+					startActivity(i);
+				}
+			});
+		}
+
 		/**
 		 * Get sharedPreferences for saving to cart
 		 */
@@ -188,5 +208,19 @@ public class SingleProduct extends Activity {
 		imageURLS = products.getImageURL();
 		productNames = products.getProductNames();
 		// END OF RETRIEVING PRODUCT INFO
+	}
+
+	public boolean isCartEmpty() {
+		prefs = this.getSharedPreferences("carmen_cart", Context.MODE_PRIVATE);
+		Map<String, ?> keys = prefs.getAll();
+
+		Map<String, ?> emptyCheck = prefs.getAll();
+
+		if (emptyCheck.size() == 0) {
+			return true;
+		}
+
+		return false;
+
 	}
 }

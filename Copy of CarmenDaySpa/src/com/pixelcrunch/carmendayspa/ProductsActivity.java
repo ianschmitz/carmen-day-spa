@@ -2,9 +2,12 @@ package com.pixelcrunch.carmendayspa;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class ProductsActivity extends Activity {
+	SharedPreferences prefs;
+	boolean isEmpty;
 
 	ListView list;
 	ProductListAdapter adapter;
@@ -26,6 +31,22 @@ public class ProductsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.products_layout);
+
+		if (!isCartEmpty()) {
+			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
+			actionBarCart.setVisibility(View.VISIBLE);
+
+			actionBarCart.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View view) {
+
+					Intent i = new Intent(getApplicationContext(),
+							CartActivity.class);
+					startActivity(i);
+				}
+			});
+		}
 
 		// Get the list of products and their information,
 		// store the info into string arrays used in creating
@@ -46,7 +67,7 @@ public class ProductsActivity extends Activity {
 		adapter = new ProductListAdapter(this, productImageURL,
 				productDescriptions, productPrices);
 		list.setAdapter(adapter);
-	
+
 		// Set up action bar Title
 		TextView actionBarTitle = (TextView) findViewById(R.id.tvActionBarTitle);
 		actionBarTitle.setText(R.string.products);
@@ -105,6 +126,20 @@ public class ProductsActivity extends Activity {
 	public void onDestroy() {
 		list.setAdapter(null);
 		super.onDestroy();
+	}
+
+	public boolean isCartEmpty() {
+		prefs = this.getSharedPreferences("carmen_cart", Context.MODE_PRIVATE);
+		Map<String, ?> keys = prefs.getAll();
+
+		Map<String, ?> emptyCheck = prefs.getAll();
+
+		if (emptyCheck.size() == 0) {
+			return true;
+		}
+
+		return false;
+
 	}
 
 }
