@@ -243,6 +243,14 @@ public class CartActivity extends Activity {
 
 				bookingEmail.putExtra(Intent.EXTRA_TEXT, messageBody);
 
+				Editor editor = prefs.edit();
+
+				editor.clear();
+
+				editor.commit(); // commit changes
+
+				CartActivity.this.finish();
+
 				startActivity(bookingEmail);
 
 			}
