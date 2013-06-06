@@ -7,8 +7,10 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -49,6 +51,7 @@ public class CartActivity extends Activity {
 	RelativeLayout item9Holder;
 	TextView tvItem9;
 	Button btnItem9;
+	TextView tvSubTotal;
 
 	Button btnRemoveAll;
 	Button btnCheckOut;
@@ -57,7 +60,19 @@ public class CartActivity extends Activity {
 	List<String> prices;
 	List<String> imageURLS;
 	List<String> productNames;
-	List<String> productQuantity;;
+	List<String> productQuantity;
+
+	float prod1Total;
+	float prod2Total;
+	float prod3Total;
+	float prod4Total;
+	float prod5Total;
+	float prod6Total;
+	float prod7Total;
+	float prod8Total;
+	float prod9Total;
+
+	int subtotal;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,25 +82,123 @@ public class CartActivity extends Activity {
 		setupActionBar();
 
 		setupProductRetrieval();
-		
+
 		init();
 
-		/**
-		 * Get sharedPreferences for saving to cart
-		 */
-		prefs = this.getSharedPreferences("carmen_cart", Context.MODE_PRIVATE);
-		Map<String, ?> keys = prefs.getAll();
+		btnItem1.setOnClickListener(new OnClickListener() {
 
-		int count = 1;
-		for (Map.Entry<String, ?> entry : keys.entrySet()) {
-			int productID = getSelectedProduct(entry.getKey());
-			String productString = "";
-			productString += productNames.get(productID) + " - ";
-			productString += String.valueOf(entry.getValue()) + " @ ";
-			productString += prices.get(productID);
+			public void onClick(View v) {
+				removeItem("0");
+				item1Holder.setVisibility(View.GONE);
 
-			tvItem1.setText(productString);
-		}
+				subtotal -= prod1Total;
+				tvSubTotal.setText("$" + subtotal);
+
+			}
+		});
+
+		btnItem2.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("1");
+				item2Holder.setVisibility(View.GONE);
+
+				subtotal -= prod2Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem3.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("2");
+				item3Holder.setVisibility(View.GONE);
+
+				subtotal -= prod3Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem4.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("3");
+				item4Holder.setVisibility(View.GONE);
+
+				subtotal -= prod4Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem5.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("4");
+				item5Holder.setVisibility(View.GONE);
+
+				subtotal -= prod5Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem6.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("5");
+				item6Holder.setVisibility(View.GONE);
+
+				subtotal -= prod6Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem7.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("6");
+				item7Holder.setVisibility(View.GONE);
+
+				subtotal -= prod7Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem8.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("7");
+				item8Holder.setVisibility(View.GONE);
+
+				subtotal -= prod8Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnItem9.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				removeItem("8");
+				item9Holder.setVisibility(View.GONE);
+
+				subtotal -= prod9Total;
+				tvSubTotal.setText("$" + subtotal);
+			}
+		});
+
+		btnRemoveAll.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Editor editor = prefs.edit();
+
+				editor.clear();
+
+				editor.commit(); // commit changes
+
+				CartActivity.this.finish();
+
+			}
+		});
 
 	}
 
@@ -117,9 +230,81 @@ public class CartActivity extends Activity {
 		item9Holder = (RelativeLayout) findViewById(R.id.item9);
 		tvItem9 = (TextView) findViewById(R.id.tvItem9);
 		btnItem9 = (Button) findViewById(R.id.btnItem9);
+		tvSubTotal = (TextView) findViewById(R.id.lblSubtotal);
 
 		btnRemoveAll = (Button) findViewById(R.id.btnRemoveAll);
 		btnCheckOut = (Button) findViewById(R.id.btnCheckOut);
+
+		/**
+		 * Get sharedPreferences for saving to cart
+		 */
+		prefs = this.getSharedPreferences("carmen_cart", Context.MODE_PRIVATE);
+		Map<String, ?> keys = prefs.getAll();
+
+		for (Map.Entry<String, ?> entry : keys.entrySet()) {
+			int productID = getSelectedProduct(entry.getKey());
+			String productString = "";
+			String prodName = productNames.get(productID);
+			String prodQuantity = String.valueOf(entry.getValue());
+			String prodPrice = prices.get(productID);
+
+			float productTotal = Float.parseFloat(prodQuantity)
+					* Float.parseFloat(prodPrice);
+			subtotal += productTotal;
+
+			productString += prodName + " - " + prodQuantity + "@" + prodPrice;
+
+			switch (productID) {
+			case 0:
+				tvItem1.setText(productString);
+				item1Holder.setVisibility(View.VISIBLE);
+				prod1Total = productTotal;
+				break;
+			case 1:
+				tvItem2.setText(productString);
+				item2Holder.setVisibility(View.VISIBLE);
+				prod2Total = productTotal;
+				break;
+			case 2:
+				tvItem3.setText(productString);
+				item3Holder.setVisibility(View.VISIBLE);
+				prod3Total = productTotal;
+				break;
+			case 3:
+				tvItem4.setText(productString);
+				item4Holder.setVisibility(View.VISIBLE);
+				prod4Total = productTotal;
+				break;
+			case 4:
+				tvItem5.setText(productString);
+				item5Holder.setVisibility(View.VISIBLE);
+				prod5Total = productTotal;
+				break;
+			case 5:
+				tvItem6.setText(productString);
+				item6Holder.setVisibility(View.VISIBLE);
+				prod6Total = productTotal;
+				break;
+			case 6:
+				tvItem7.setText(productString);
+				item7Holder.setVisibility(View.VISIBLE);
+				prod7Total = productTotal;
+				break;
+			case 7:
+				tvItem8.setText(productString);
+				item8Holder.setVisibility(View.VISIBLE);
+				prod8Total = productTotal;
+				break;
+			case 8:
+				tvItem9.setText(productString);
+				item9Holder.setVisibility(View.VISIBLE);
+				prod9Total = productTotal;
+				break;
+			}
+		}
+
+		tvSubTotal.setText("$" + subtotal);
+
 	}
 
 	private void setupActionBar() {
@@ -177,4 +362,11 @@ public class CartActivity extends Activity {
 		// END OF RETRIEVING PRODUCT INFO
 	}
 
+	private void removeItem(String itemKey) {
+		Editor editor = prefs.edit();
+
+		editor.remove(itemKey);
+
+		editor.commit(); // commit changes
+	}
 }

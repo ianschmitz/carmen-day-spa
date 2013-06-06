@@ -63,7 +63,11 @@
                     android:id="@+id/btnChangeTime"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="Choose Time"/>
+                    android:text="Choose Time"
+                    android:background="@drawable/btn_generic"
+                    android:height="@dimen/Button_Height"
+                    android:textColor="@color/Button_Font"
+                    android:textSize="@dimen/Button_Font_Size"/>
 
 
             <TextView
@@ -84,7 +88,11 @@
                     android:id="@+id/btnChangeDate"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="Select Date"/>
+                    android:text="Select Date"
+                    android:background="@drawable/btn_generic"
+                    android:height="@dimen/Button_Height"
+                    android:textColor="@color/Button_Font"
+                    android:textSize="@dimen/Button_Font_Size"/>
 
             <TextView
                     android:id="@+id/tvDate"
@@ -116,7 +124,11 @@
                     android:id="@+id/btnBook"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/bookButton">
+                    android:text="@string/bookButton"
+                    android:background="@drawable/btn_generic"
+                    android:height="@dimen/Button_Height"
+                    android:textColor="@color/Button_Font"
+                    android:textSize="@dimen/Button_Font_Size">
             </Button>
             
    

@@ -17,7 +17,7 @@
         android:minHeight="200dp"
         android:minWidth="200dp" />
 
-    <TextView
+    <com.pixelcrunch.resources.TextViewChantelli
             android:id="@+id/tvDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#42526c"/>
 
-    <TextView
+    <com.pixelcrunch.resources.TextViewChantelli
             android:id="@+id/tvPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:prompt="@string/quantity" />
 
-    <TextView
+    <com.pixelcrunch.resources.TextViewChantelli
         android:id="@+id/tvOutOfStock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

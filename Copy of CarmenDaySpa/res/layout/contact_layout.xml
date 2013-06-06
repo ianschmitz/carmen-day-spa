@@ -38,7 +38,6 @@
                 android:inputType="textPersonName" >
             </EditText>
 
-
             <EditText
                 android:id="@+id/etFeedback"
                 android:layout_width="fill_parent"
@@ -53,7 +52,11 @@
                 android:id="@+id/btnSubmitFeedback"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/submit" />
+                android:background="@drawable/btn_generic"
+                android:height="@dimen/Button_Height"
+                android:text="@string/submit"
+                android:textColor="@color/Button_Font"
+                android:textSize="@dimen/Button_Font_Size" />
         </LinearLayout>
     </ScrollView>
 
