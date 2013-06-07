@@ -27,6 +27,9 @@ public class ProductsActivity extends Activity {
 	// used to send selected product to the product page
 	public final static String ID_EXTRA = "com.pixelcrunch.carmendayspa._ID";
 
+	// Used to keep track of cart button
+	private int itemAddedToCart = 0;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -118,9 +121,37 @@ public class ProductsActivity extends Activity {
 			// Create intent
 			Intent i = new Intent(ProductsActivity.this, SingleProduct.class);
 			i.putExtra(ID_EXTRA, String.valueOf(id));
-			startActivity(i);
+
+			itemAddedToCart = 0;
+			// Returns result from SingleProduct. If 1 then we know a product
+			// was added
+			// and can set cart button visible.
+			startActivityForResult(i, itemAddedToCart);
+
 		}
 	};
+
+	// this is the method that call when Activity result comes
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// check whether result comes with RESULT_OK (That mean no problem
+		// in result)
+		if (resultCode == RESULT_OK) {
+			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
+			actionBarCart.setVisibility(View.VISIBLE);
+			actionBarCart.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View view) {
+
+					Intent i = new Intent(getApplicationContext(),
+							CartActivity.class);
+					startActivity(i);
+				}
+			});
+		}
+
+	}
 
 	@Override
 	public void onDestroy() {

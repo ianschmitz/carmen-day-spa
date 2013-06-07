@@ -62,6 +62,7 @@ public class SingleProduct extends Activity {
 					startActivity(i);
 				}
 			});
+
 		}
 
 		/**
@@ -99,6 +100,14 @@ public class SingleProduct extends Activity {
 			@Override
 			public void onClick(View view) {
 				saveToCart();
+
+				// Used to enable cart button on Action Bar
+				if (selectedQuant > 0) {
+					setResult(RESULT_OK);
+				} else {
+					setResult(RESULT_CANCELED);
+				}
+
 				SingleProduct.this.finish();
 			}
 		});
