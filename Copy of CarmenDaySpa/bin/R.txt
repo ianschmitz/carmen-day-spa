@@ -245,6 +245,7 @@ int menu single_product 0x7f090001
 int string about 0x7f06001d
 int string aboutCarmen 0x7f06001f
 int string action_settings 0x7f060016
+int string addedToCart 0x7f06003c
 int string additionalComments 0x7f06002b
 int string app_name 0x7f060015
 int string auth_client_availability_notification_title 0x7f06000f

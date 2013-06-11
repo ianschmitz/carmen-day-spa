@@ -384,6 +384,7 @@ containing a value of this type.
         public static final int about=0x7f06001d;
         public static final int aboutCarmen=0x7f06001f;
         public static final int action_settings=0x7f060016;
+        public static final int addedToCart=0x7f06003c;
         public static final int additionalComments=0x7f06002b;
         public static final int app_name=0x7f060015;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 

@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -137,6 +140,9 @@ public class ProductsActivity extends Activity {
 		// check whether result comes with RESULT_OK (That mean no problem
 		// in result)
 		if (resultCode == RESULT_OK) {
+			Crouton.makeText(this,
+					getString(R.string.addedToCart), Style.INFO).show();
+			
 			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
 			actionBarCart.setVisibility(View.VISIBLE);
 			actionBarCart.setOnClickListener(new View.OnClickListener() {

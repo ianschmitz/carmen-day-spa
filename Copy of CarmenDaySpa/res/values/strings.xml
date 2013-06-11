@@ -44,5 +44,6 @@
     <string name="servicesHairRemovalTitle">Hair Removal</string>
     <string name="servicesSpecialTouches">Eyelash Extension $60\nBeautifying Eye Treatment $25\nEar Piercing $15\nEar Candling $45\nDay or Evening makeup $40\nBridal Makeup $50\n\nBody Bronzing Air Mist Tanning\nFace and Neck $35\nFull Body $50</string>
     <string name="servicesSpecialTouchesTitle">Special Touches</string>
+    <string name="addedToCart">Added To Cart</string>
 
 </resources>
