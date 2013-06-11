@@ -13,6 +13,10 @@
     <dimen name="Focused_Stroke">4dp</dimen>
     <dimen name="Normal_Stroke">1dp</dimen>
     <dimen name="Pressed_Stroke">4dp</dimen>
+    
+    <!--  Other General Sizes -->
+    <dimen name="textSizeContent">16sp</dimen>
+    <dimen name="textSizeHeader">28sp</dimen>
 
 
 </resources>

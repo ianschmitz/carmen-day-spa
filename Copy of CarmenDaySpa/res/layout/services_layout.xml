@@ -11,8 +11,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp" >
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
 
         <Button
             android:id="@+id/btnBody"
@@ -44,7 +44,8 @@
                 android:scrollbars="vertical"
                 android:text="@string/servicesBody"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#42526c" />
+                android:textColor="#42526c"
+                android:textSize="@dimen/textSizeContent" />
         </LinearLayout>
 
         <Button
@@ -77,7 +78,8 @@
                 android:scrollbars="vertical"
                 android:text="@string/servicesFace"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#42526c" />
+                android:textColor="#42526c"
+                android:textSize="@dimen/textSizeContent" />
         </LinearLayout>
 
         <Button
@@ -110,7 +112,8 @@
                 android:scrollbars="vertical"
                 android:text="@string/servicesHandsFeet"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#42526c" />
+                android:textColor="#42526c"
+                android:textSize="@dimen/textSizeContent" />
         </LinearLayout>
 
         <Button
@@ -143,7 +146,8 @@
                 android:scrollbars="vertical"
                 android:text="@string/servicesHairRemoval"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#42526c" />
+                android:textColor="#42526c"
+                android:textSize="@dimen/textSizeContent" />
         </LinearLayout>
 
         <Button
@@ -176,7 +180,8 @@
                 android:scrollbars="vertical"
                 android:text="@string/servicesSpecialTouches"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#42526c" />
+                android:textColor="#42526c"
+                android:textSize="@dimen/textSizeContent" />
         </LinearLayout>
     </LinearLayout>
 

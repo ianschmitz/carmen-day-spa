@@ -18,16 +18,18 @@
                 android:layout_height="wrap_content">
 
             <TextView
-                    android:id="@+id/bodyParagraph"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"
-                    android:padding="15dip"
-                    android:text="@string/aboutCarmen"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#42526c"/>
+                android:id="@+id/bodyParagraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:padding="15dip"
+                android:text="@string/aboutCarmen"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#42526c"
+                android:textSize="@dimen/textSizeContent" />
+
         </RelativeLayout>
     </ScrollView>
 

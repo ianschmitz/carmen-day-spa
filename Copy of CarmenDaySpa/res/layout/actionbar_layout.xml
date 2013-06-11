@@ -19,7 +19,7 @@
             android:paddingLeft="25dip"
             android:text="@string/about"
             android:textColor="#ecca4a"
-            android:textSize="28sp"
+            android:textSize="@dimen/textSizeHeader"
             android:textStyle="bold"/>
 
     <Button

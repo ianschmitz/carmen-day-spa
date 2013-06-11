@@ -5,4 +5,20 @@
          screen margins) for sw600dp devices (e.g. 7" tablets) here.
     -->
 
+
+    <!-- For services page button stuff -->
+    <dimen name="Button_Corner">6dp</dimen>
+    <dimen name="Button_Margin">6dp</dimen>
+    <dimen name="Button_Height">52dp</dimen>
+    <dimen name="Button_Padding">10dp</dimen>
+    <dimen name="Button_Font_Size">22dp</dimen>
+    <dimen name="Focused_Stroke">6dp</dimen>
+    <dimen name="Normal_Stroke">2dp</dimen>
+    <dimen name="Pressed_Stroke">6dp</dimen>
+
+    <!-- Other General Sizes -->
+    <dimen name="textSizeContent">24sp</dimen>
+        <dimen name="textSizeHeader">32sp</dimen>
+    
+
 </resources>

@@ -7,6 +7,7 @@ import java.util.Map;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -135,14 +136,20 @@ public class ProductsActivity extends Activity {
 	};
 
 	// this is the method that call when Activity result comes
+	@SuppressLint("ResourceAsColor")
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// check whether result comes with RESULT_OK (That mean no problem
 		// in result)
 		if (resultCode == RESULT_OK) {
-			Crouton.makeText(this,
-					getString(R.string.addedToCart), Style.INFO).show();
-			
+
+			Style style = new Style.Builder()
+					.setBackgroundColor(R.color.Crouton)
+					.setTextColor(android.R.color.black).build();
+
+			Crouton.makeText(this, getString(R.string.addedToCart), style)
+					.show();
+
 			Button actionBarCart = (Button) findViewById(R.id.btnActionBarCart);
 			actionBarCart.setVisibility(View.VISIBLE);
 			actionBarCart.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +169,7 @@ public class ProductsActivity extends Activity {
 	@Override
 	public void onDestroy() {
 		list.setAdapter(null);
+		Crouton.cancelAllCroutons();
 		super.onDestroy();
 	}
 
